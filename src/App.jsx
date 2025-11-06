@@ -1,7 +1,16 @@
+import React from 'react';
+import Navbar from './components/Navbar';
+import LandingPage from './components/LandingPage';
+
 export default function App() {
   return (
-    <div className="bg-red-500 text-white p-8 rounded-lg shadow-lg">
-      Tailwind funkar :)
+    <div className="min-h-screen w-full bg-zinc-900 text-white">
+      <Navbar />
+      <LandingPage/>
+      <div className="flex items-center justify-center h-[calc(100vh-64px)]">
+        <div className="p-8 rounded-lg shadow-lg">
+        </div>
+      </div>
     </div>
   );
 }
