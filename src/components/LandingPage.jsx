@@ -1,26 +1,22 @@
-
-
 function LandingPage() {
   return (
-    <div className="w-full h-screen bg-zinc-900 pt-1">
+    <div className="w-full h-screen bg-white pt-1">
       <div className="px-20 textstructure mt-10 pt-20">
-        
-     
         <div className="space-y-6">
           <div className="masker font-[Founders_Grotesk] font-semibold">
-            <h1 className="uppercase text-white text-9xl leading-[5.5vw] tracking-tighter">
+            <h1 className="uppercase text-black text-9xl leading-[5.5vw] tracking-tighter">
               NS DEV
             </h1>
           </div>
 
           <div className="masker font-[Founders_Grotesk] font-semibold">
-            <h1 className="uppercase text-white text-9xl leading-[5.5vw] tracking-tighter">
+            <h1 className="uppercase text-black text-9xl leading-[5.5vw] tracking-tighter">
               We Create
             </h1>
           </div>
 
           <div className="masker font-[Founders_Grotesk] font-semibold">
-            <h1 className="uppercase text-white text-9xl leading-[5.5vw] tracking-tighter">
+            <h1 className="uppercase text-black text-9xl leading-[5.5vw] tracking-tighter">
               Signature
             </h1>
           </div>
@@ -31,6 +27,7 @@ function LandingPage() {
 }
 
 export default LandingPage
+
 
 {/*import React from 'react'
 
