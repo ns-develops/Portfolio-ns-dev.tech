@@ -1,19 +1,18 @@
 import React from 'react';
-import ResumeImage from '../assets/boldresume.png';
+//import ResumeImage from '../assets/boldresume.png';
 
 export const Eyes = () => {
   return (
-    <div className="eyes w-full h-screen flex justify-center items-start bg-white pt-32">
-      <img
+    <div className="w-full min-h-screen flex justify-center items-center bg-white">
+   
+   {/*  <img
         src={ResumeImage}
         alt="Resume"
-        className="w-full max-w-4xl h-auto object-contain"
-      />
+        className="max-w-4xl w-full h-auto object-contain"
+      /> */}
     </div>
   );
 };
-
-
 
 
 

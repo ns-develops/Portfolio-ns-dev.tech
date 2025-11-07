@@ -3,7 +3,7 @@ export default function Navbar() {
     <nav className="fixed z-[999] w-full px-20 py-8 font-neuemontreal text-black flex justify-between items-center">
       <div className="logo"></div>
       <div className="links flex gap-10">
-        {["Experience", "Portfolio", "Info", "Reviews", "Contact"].map((item, index) => (
+        {[, "Portfolio", "Info", "Reviews", "Contact"].map((item, index) => (
           <a 
             key={index} 
             href="#" 
