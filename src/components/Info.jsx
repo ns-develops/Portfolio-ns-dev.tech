@@ -18,7 +18,7 @@ const Info = () => {
 
       <div className="flex flex-col gap-6 mt-10 text-[3vw] leading-[4.5vw] font-[Neue_Montreal]">
         <p className="text-left">
-          Life as a creative designer in web development is a constant blend of art and logic — a space where imagination meets technology. Every day brings a new challenge: transforming ideas into digital experiences that are not only functional but also visually engaging.
+          Life as a creative designer is a constant blend of art and logic — a space where imagination meets technology. Every day brings a new challenge: transforming ideas into digital experiences that are not only functional but also visually engaging.
         </p>
         <p className="text-right">
           It’s about understanding how people interact with design, how colors, typography, and layout influence emotion, and how every line of code brings a vision to life. As a creative designer, you live at the intersection of design and development — sketching wireframes in the morning and refining animations or front-end components by the afternoon.
