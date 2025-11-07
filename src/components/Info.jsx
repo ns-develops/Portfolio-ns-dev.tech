@@ -1,9 +1,14 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const Info = () => {
   return (
-    <div className="w-full p-20 bg-[#CDEA68] rounded-tl-3xl rounded-tr-3xl text-black">
-      
+    <motion.div
+      className="relative -mt-4 w-full p-20 bg-[#CDEA68] rounded-tl-3xl rounded-tr-3xl text-black z-10"
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, ease: 'easeOut' }}
+    >
       <div className="flex flex-col gap-6 text-[3vw] leading-[4.5vw] font-[Neue_Montreal]">
         <p className="text-left">
           It all began with my passion for programming in 2020, which eventually led me to earn a university degree in App and Web Development from the University of Gothenburg.
@@ -29,21 +34,26 @@ const Info = () => {
         <p className="text-right">
           But it’s also a journey of constant learning — exploring new tools, keeping up with trends, and finding fresh ways to express creativity through technology. At its core, being a creative designer in web development is about storytelling: crafting meaningful digital experiences that connect people and ideas.
         </p>
-      {/* <p className="text-right">
-        -   N.S
-        </p>*/}
       </div>
 
       <div className="w-full flex gap-5 border-t-[1px] mt-20 border-[#a1b562] pt-10">
         <div className="w-1/2">
           <h1 className="text-7xl font-[Neue_Montreal]">Approach:</h1>
-          <button className="flex items-center gap-10 px-10 py-6 bg-zinc-900 mt-10 rounded-full text-white">
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="flex items-center gap-10 px-10 py-6 bg-zinc-900 mt-10 rounded-full text-white"
+          >
             Read More
-          </button>
+          </motion.button>
         </div>
 
         <div className="w-1/2 flex justify-end relative">
-          <div className="bg-[#b0c859] w-[70vh] h-[70vh] rounded relative overflow-hidden">
+          <motion.div
+            className="bg-[#b0c859] w-[70vh] h-[70vh] rounded relative overflow-hidden"
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.3 }}
+          >
             <div className="absolute inset-0 flex flex-col justify-center items-center">
               {Array.from({ length: 12 }).map((_, i) => (
                 <span
@@ -55,11 +65,10 @@ const Info = () => {
                 </span>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
-
-    </div>
+    </motion.div>
   );
 };
 
