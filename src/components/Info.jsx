@@ -29,6 +29,9 @@ const Info = () => {
         <p className="text-right">
           But it’s also a journey of constant learning — exploring new tools, keeping up with trends, and finding fresh ways to express creativity through technology. At its core, being a creative designer in web development is about storytelling: crafting meaningful digital experiences that connect people and ideas.
         </p>
+      {/* <p className="text-right">
+        -   N.S
+        </p>*/}
       </div>
 
       <div className="w-full flex gap-5 border-t-[1px] mt-20 border-[#a1b562] pt-10">
@@ -41,7 +44,6 @@ const Info = () => {
 
         <div className="w-1/2 flex justify-end relative">
           <div className="bg-[#b0c859] w-[70vh] h-[70vh] rounded relative overflow-hidden">
-            {/* Repetitiv diagonal text som täcker hela boxen */}
             <div className="absolute inset-0 flex flex-col justify-center items-center">
               {Array.from({ length: 12 }).map((_, i) => (
                 <span
