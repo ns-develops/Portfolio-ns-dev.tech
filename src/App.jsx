@@ -2,6 +2,8 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import LandingPage from './components/LandingPage';
 import { Marquee } from './components/Marquee';
+import Info from './components/Info';
+
 
 export default function App() {
   return (
@@ -9,6 +11,7 @@ export default function App() {
       <Navbar />
       <LandingPage/>
       <Marquee/>
+      <Info/>
       <div className="flex items-center justify-center h-[calc(100vh-64px)]">
         <div className="p-8 rounded-lg shadow-lg">
         </div>
