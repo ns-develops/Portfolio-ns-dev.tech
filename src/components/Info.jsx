@@ -31,15 +31,32 @@ const Info = () => {
         </p>
       </div>
 
-      <div className="w-full border-t-[1px] mt-20 border-[#a1b562] pt-10">
+      <div className="w-full flex gap-5 border-t-[1px] mt-20 border-[#a1b562] pt-10">
         <div className="w-1/2">
-          <h1 className="text-7xl font-[Neue_Montreal]"> Approach:</h1>
+          <h1 className="text-7xl font-[Neue_Montreal]">Approach:</h1>
           <button className="flex items-center gap-10 px-10 py-6 bg-zinc-900 mt-10 rounded-full text-white">
             Read More
-           {/* <div className="w-2 h-2 bg-zinc-100 rounded-full"></div>*/}
           </button>
         </div>
+
+        <div className="w-1/2 flex justify-end relative">
+          <div className="bg-[#b0c859] w-[70vh] h-[70vh] rounded relative overflow-hidden">
+            {/* Repetitiv diagonal text som täcker hela boxen */}
+            <div className="absolute inset-0 flex flex-col justify-center items-center">
+              {Array.from({ length: 12 }).map((_, i) => (
+                <span
+                  key={i}
+                  className="text-[5vw] text-white font-bold opacity-20 whitespace-nowrap transform -rotate-45"
+                  style={{ margin: '-2vh 0' }}
+                >
+                  PICTURE PICTURE PICTURE PICTURE PICTURE PICTURE
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
+
     </div>
   );
 };
