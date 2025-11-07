@@ -1,7 +1,28 @@
 import React from 'react';
-import RetroEntryVideo from '../assets/retroentry.MOV';
+import ResumeImage from '../assets/boldresume.png';
 
 export const Eyes = () => {
+  return (
+    <div className="eyes w-full h-screen flex justify-center items-start bg-white pt-32">
+      <img
+        src={ResumeImage}
+        alt="Resume"
+        className="w-full max-w-4xl h-auto object-contain"
+      />
+    </div>
+  );
+};
+
+
+
+
+
+
+
+
+//import RetroEntryVideo from '../assets/retroentry.MOV';
+
+{/* export const Eyes = () => {
   return (
 <div className="eyes w-full h-screen overflow-hidden relative zinc-800 flex justify-center">
   <video
@@ -18,4 +39,4 @@ export const Eyes = () => {
 </div>
 
   );
-};
+};*/}
