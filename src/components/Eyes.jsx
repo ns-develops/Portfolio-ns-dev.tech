@@ -6,7 +6,7 @@ export const Eyes = () => {
   const eye2Ref = useRef(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [overlayOpacity, setOverlayOpacity] = useState(0);
-  const targetOpacityRef = useRef(0); // target value for smooth easing
+  const targetOpacityRef = useRef(0); 
   const prevScrollYRef = useRef(0);
 
   const handleMouseMove = (e) => {
@@ -18,8 +18,6 @@ export const Eyes = () => {
       const currentScrollY = window.scrollY;
       const scrollDiff = currentScrollY - prevScrollYRef.current;
 
-      // Scroll down → öka overlay
-      // Scroll up → minska overlay
       targetOpacityRef.current += scrollDiff / 500;
       if (targetOpacityRef.current > 1) targetOpacityRef.current = 1;
       if (targetOpacityRef.current < 0) targetOpacityRef.current = 0;
@@ -31,14 +29,14 @@ export const Eyes = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Smooth animation med requestAnimationFrame
+
   useEffect(() => {
     let animationFrame;
 
     const animate = () => {
       setOverlayOpacity(prev => {
         const diff = targetOpacityRef.current - prev;
-        const step = diff * 0.1; // easing faktor
+        const step = diff * 0.1; 
         if (Math.abs(diff) < 0.001) return targetOpacityRef.current;
         return prev + step;
       });
@@ -72,7 +70,7 @@ export const Eyes = () => {
 
   return (
     <>
-      {/* Portfolio-bild med smooth overlay */}
+      
       <div
         className="w-full relative flex justify-center items-start bg-white"
         onMouseMove={handleMouseMove}
@@ -83,13 +81,13 @@ export const Eyes = () => {
           className="w-[60vw] max-w-[800px] h-auto shadow-lg object-contain mt-0"
         />
 
-        {/* Smooth dark overlay */}
+      
         <div
           className="absolute top-0 left-0 w-full h-full bg-black pointer-events-none"
           style={{ opacity: overlayOpacity }}
         ></div>
 
-        {/* Ögon */}
+     
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[20vw] h-[20vw] flex justify-center items-start gap-6 pt-4">
           <div className="flex items-center justify-center w-[8vw] h-[8vw] rounded-full bg-zinc-100">
             <div
@@ -117,8 +115,8 @@ export const Eyes = () => {
         </div>
       </div>
 
-      {/* Svart sektion under */}
-      <div className="w-full bg-black" style={{ height: '100vh' }}></div>
+
+      <div className="w-full zinc-900" style={{ height: '100vh' }}></div>
     </>
   );
 };
