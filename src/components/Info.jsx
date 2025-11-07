@@ -9,10 +9,10 @@ const Info = () => {
           It all began with my passion for programming in 2020, which eventually led me to earn a university degree in App and Web Development from the University of Gothenburg.
         </p>
         <p className="text-right">
-          With over five years of experience in web and native mobile development, I have worked with modern technologies such as React, TypeScript, and Node.js. I am passionate about design, creating user-friendly applications that solve real-world problems.
+          With over five years of experience in web and native mobile development, I have worked with full service applications with modern technologies such as React, TypeScript, and Node.js. I am passionate about design, creating user-friendly applications that solve real-world problems.
         </p>
         <p className="text-left">
-          I spend a lot of my time learning new technologies, contributing to open-source projects, and exploring creative solutions to complex problems.
+         I spend a lot of my time learning new technologies, contributing to open-source projects, and exploring creative solutions to complex problems.
         </p>
       </div>
 
