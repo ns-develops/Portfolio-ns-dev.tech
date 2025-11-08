@@ -10,11 +10,10 @@ const Portfolio = () => {
       
       <div className="px-20">
         <div className="cards w-full flex gap-10 mt-10">
-          <div className="card rounded-xl w-1/2 h-[75vh] bg-red-500 overflow-hidden">
-          <div className="w-full h-full bg-green-600">
-            
-          
+          <div className="cardcontainer rounded-xl w-1/2 h-[75vh] overflow-hidden">
+          <div className="w-full h-full rounded-xl bg-green-600">
           </div>
+          
           </div>
           <div className="card rounded-xl w-1/2 h-[75vh] bg-red-500"></div>
         </div>
