@@ -9,12 +9,11 @@
   font-style: normal;
 }
 
-/* Säkerställ att hela kroppen använder Montserrat som fallback */
 body {
   font-family: 'Montserrat', sans-serif;
 }
 
-/* input.css */
+
 @import url('https://fonts.googleapis.com/css2?family=Ceviche+One&display=swap');
 
 .font-benguiat {
