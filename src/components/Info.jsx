@@ -4,8 +4,8 @@ import { motion } from 'framer-motion';
 const Info = () => {
   return (
     <motion.div
-      className="relative -mt-4 w-full p-20 bg-[#CDEA68] rounded-tl-3xl rounded-tr-3xl text-black z-10"
-      initial={{ opacity: 0, y: 100 }}
+    className="relative -mt-3 w-full p-20 bg-white rounded-tl-3xl rounded-tr-3xl text-black z-10"
+    initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: 'easeOut' }}
     >
@@ -34,9 +34,10 @@ const Info = () => {
         <p className="text-right">
           But it’s also a journey of constant learning — exploring new tools, keeping up with trends, and finding fresh ways to express creativity through technology. At its core, being a creative designer in web development is about storytelling: crafting meaningful digital experiences that connect people and ideas.
         </p>
+     
       </div>
 
-      <div className="w-full flex gap-5 border-t-[1px] mt-20 border-[#a1b562] pt-10">
+      <div className="w-full flex gap-5 border-t-[1px] mt-20 border-[#CDEA68] pt-10">
         <div className="w-1/2">
           <h1 className="text-7xl font-[Neue_Montreal]">Approach:</h1>
           <motion.button
@@ -50,7 +51,7 @@ const Info = () => {
 
         <div className="w-1/2 flex justify-end relative">
           <motion.div
-            className="bg-[#b0c859] w-[70vh] h-[70vh] rounded relative overflow-hidden"
+            className="bg-white w-[70vh] h-[70vh] rounded relative overflow-hidden"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.3 }}
           >
@@ -58,7 +59,7 @@ const Info = () => {
               {Array.from({ length: 12 }).map((_, i) => (
                 <span
                   key={i}
-                  className="text-[5vw] text-white font-bold opacity-20 whitespace-nowrap transform -rotate-45"
+                  className="text-[5vw] text-bg-black font-bold opacity-20 whitespace-nowrap transform -rotate-45"
                   style={{ margin: '-2vh 0' }}
                 >
                   PICTURE PICTURE PICTURE PICTURE PICTURE PICTURE

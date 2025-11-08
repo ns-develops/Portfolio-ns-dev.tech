@@ -8,6 +8,7 @@ export default {
     extend: {
       fontFamily: {
         neuemontreal: ["'Neue Montreal'", "sans-serif"],
+        montserrat: ["'Montserrat'", "sans-serif"], // ← Lägg till här
       },
     },
   },

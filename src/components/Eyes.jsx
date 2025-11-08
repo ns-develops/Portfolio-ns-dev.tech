@@ -1,17 +1,15 @@
 import React, { useRef, useState, useEffect } from 'react';
-import PortImage from '../assets/greenport.png';
+import '../input.css';
 
 export const Eyes = () => {
   const eye1Ref = useRef(null);
   const eye2Ref = useRef(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const [overlayOpacity, setOverlayOpacity] = useState(0);
+  const [overlayOpacity, setOverlayOpacity] = useState(0); // Börjar på 0
   const targetOpacityRef = useRef(0); 
   const prevScrollYRef = useRef(0);
 
-  const handleMouseMove = (e) => {
-    setMousePos({ x: e.clientX, y: e.clientY });
-  };
+  const handleMouseMove = (e) => setMousePos({ x: e.clientX, y: e.clientY });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,107 +17,86 @@ export const Eyes = () => {
       const scrollDiff = currentScrollY - prevScrollYRef.current;
 
       targetOpacityRef.current += scrollDiff / 500;
-      if (targetOpacityRef.current > 1) targetOpacityRef.current = 1;
-      if (targetOpacityRef.current < 0) targetOpacityRef.current = 0;
+      targetOpacityRef.current = Math.min(Math.max(targetOpacityRef.current, 0), 1);
 
       prevScrollYRef.current = currentScrollY;
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-
   useEffect(() => {
     let animationFrame;
-
     const animate = () => {
       setOverlayOpacity(prev => {
         const diff = targetOpacityRef.current - prev;
         const step = diff * 0.1; 
-        if (Math.abs(diff) < 0.001) return targetOpacityRef.current;
-        return prev + step;
+        return Math.abs(diff) < 0.001 ? targetOpacityRef.current : prev + step;
       });
-
       animationFrame = requestAnimationFrame(animate);
     };
-
     animate();
-
     return () => cancelAnimationFrame(animationFrame);
   }, []);
 
   const getPupilStyle = (eyeRef) => {
     if (!eyeRef.current) return { transform: 'translate(0, 0)' };
     const rect = eyeRef.current.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
-
-    const dx = mousePos.x - centerX;
-    const dy = mousePos.y - centerY;
-
+    const dx = mousePos.x - (rect.left + rect.width / 2);
+    const dy = mousePos.y - (rect.top + rect.height / 2);
     const radius = rect.width / 4;
     const distance = Math.min(Math.sqrt(dx * dx + dy * dy), radius);
-
     const angle = Math.atan2(dy, dx);
-    const x = distance * Math.cos(angle);
-    const y = distance * Math.sin(angle);
-
-    return { transform: `translate(${x}px, ${y}px)` };
+    return { transform: `translate(${distance * Math.cos(angle)}px, ${distance * Math.sin(angle)}px)` };
   };
 
   return (
     <>
-      
       <div
-        className="w-full relative flex justify-center items-start bg-white"
+        className="w-full relative flex flex-col justify-center items-center bg-white"
         onMouseMove={handleMouseMove}
       >
-        <img
-          src={PortImage}
-          alt="Eyes Portfolio"
-          className="w-[60vw] max-w-[800px] h-auto shadow-lg object-contain mt-0"
-        />
-
-      
         <div
           className="absolute top-0 left-0 w-full h-full bg-zinc-900 pointer-events-none"
           style={{ opacity: overlayOpacity }}
         ></div>
 
-     
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[20vw] h-[20vw] flex justify-center items-start gap-6 pt-4">
-          <div className="flex items-center justify-center w-[8vw] h-[8vw] rounded-full bg-zinc-100">
-            <div
-              ref={eye1Ref}
-              className="flex items-center justify-center w-3/4 h-3/4 rounded-full bg-zinc-900 relative overflow-hidden"
-            >
-              <div
-                className="w-1/4 h-1/4 rounded-full bg-zinc-100 absolute"
-                style={getPupilStyle(eye1Ref)}
-              ></div>
-            </div>
-          </div>
+        <h2 className="absolute top-[10%] left-[5%] text-[2vw] font-montserrat text-zinc-700 select-none tracking-widest">
+          ART & DESIGN
+        </h2>
 
-          <div className="flex items-center justify-center w-[8vw] h-[8vw] rounded-full bg-zinc-100">
-            <div
-              ref={eye2Ref}
-              className="flex items-center justify-center w-3/4 h-3/4 rounded-full bg-zinc-900 relative overflow-hidden"
-            >
-              <div
-                className="w-1/4 h-1/4 rounded-full bg-zinc-100 absolute"
-                style={getPupilStyle(eye2Ref)}
-              ></div>
-            </div>
+        <h2 className="absolute top-[10%] right-[5%] text-[2vw] font-montserrat text-zinc-900 select-none tracking-widest">
+          NO.1
+        </h2>
+
+        {overlayOpacity > 0 && (
+          <div className="absolute top-[30%] left-1/2 -translate-x-1/2 w-[20vw] h-[20vw] flex justify-center items-start gap-6 pt-4">
+            {[eye1Ref, eye2Ref].map((ref, i) => (
+              <div key={i} className="flex items-center justify-center w-[8vw] h-[8vw] rounded-full bg-zinc-100">
+                <div
+                  ref={ref}
+                  className="flex items-center justify-center w-3/4 h-3/4 rounded-full bg-zinc-900 relative overflow-hidden"
+                >
+                  <div
+                    className="w-1/4 h-1/4 rounded-full bg-zinc-100 absolute"
+                    style={getPupilStyle(ref)}
+                  ></div>
+                </div>
+              </div>
+            ))}
           </div>
-        </div>
+        )}
+
+        <h1 className="text-[8vw] font-montserrat text-zinc-900 mt-[35vh] select-none">
+          Portfolio
+        </h1>
       </div>
 
-
-      <div className="w-full zinc-900" style={{ height: '100vh' }}></div>
+      <div className="w-full bg-zinc-900" style={{ height: '100vh' }}></div>
     </>
   );
 };
+
 
 
 
