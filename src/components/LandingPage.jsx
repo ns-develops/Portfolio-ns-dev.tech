@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { SlArrowDown } from "react-icons/sl";
 
 function LandingPage() {
+  const [showVideo, setShowVideo] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShowVideo(false), 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
   const lines = ["NS DEV", "We Create", "Signature"];
   const subtitles = [
     "Empowering startups and enterprise-level businesses",
     "Code meets solution",
   ];
-
 
   const blinkStyle = {
     animation: "blink 1s infinite",
@@ -20,12 +26,26 @@ function LandingPage() {
     }
   `;
 
+
+  if (showVideo) {
+    return (
+      <div className="w-full h-screen bg-black flex items-center justify-center">
+        <video
+          src="brus.mp4"  
+          autoPlay
+          muted
+          playsInline
+          className="w-full h-full object-cover"
+        />
+      </div>
+    );
+  }
+
   return (
     <div className="w-full h-screen bg-white pt-1">
       <style>{styles}</style>
 
       <div className="px-20 textstructure mt-10 pt-20">
-
         <div className="space-y-6">
           {lines.map((item, index) => (
             <div
@@ -39,9 +59,7 @@ function LandingPage() {
           ))}
         </div>
 
- 
         <div className="border-t-[1px] border-zinc-800 mt-32"></div>
-
 
         <div className="flex justify-between mt-4">
           {subtitles.map((item, index) => (
@@ -54,7 +72,6 @@ function LandingPage() {
           ))}
         </div>
 
- 
         <div className="flex justify-center mt-10">
           <SlArrowDown className="text-4xl" style={blinkStyle} />
         </div>
