@@ -21,7 +21,7 @@ const Portfolio = () => {
           
           <div className="flex items-center gap-2 mb-4">
             <span className="w-3 h-3 rounded-full bg-white"></span>
-            <span className="text-white text-lg font-semibold">Sportly.se</span>
+            <span className="text-white text-sm font-semibold">Sportly.se</span>
           </div>
 
           <div className="cardcontainer relative group rounded-xl h-[75vh] overflow-hidden flex items-center justify-center bg-gray-300">
@@ -57,7 +57,7 @@ const Portfolio = () => {
           
           <div className="flex items-center gap-2 mb-4">
             <span className="w-3 h-3 rounded-full bg-white"></span>
-            <span className="text-white text-lg font-semibold">Sustainable E-commerce</span>
+            <span className="text-white text-sm font-semibold">Sustainable E-commerce</span>
           </div>
 
           <div className="cardcontainer relative group rounded-xl h-[75vh] overflow-hidden flex items-center justify-center bg-black">
