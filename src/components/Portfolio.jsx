@@ -9,16 +9,21 @@ const Portfolio = () => {
   return (
     <div className="w-full bg-zinc-900 text-white min-h-screen">
       
-      <div className="w-full px-20 border-b-[1px] border-zinc-800 pb-20">
+      <div className="w-full px-20 border-b-[1px] border-zinc-800 pb-32">
         <h1 className="text-8xl font-['Neue_Montreal'] tracking-tight font-semibold">
           Featured projects
         </h1>
       </div>
 
-      <div className="px-20 mt-10 flex gap-10 relative">
+      <div className="px-20 mt-20 flex gap-10 relative">
 
-        {/* Första kortet med knappar under */}
         <div className="flex flex-col w-1/2">
+          
+          <div className="flex items-center gap-2 mb-4">
+            <span className="w-3 h-3 rounded-full bg-white"></span>
+            <span className="text-white text-lg font-semibold">Sportly.se</span>
+          </div>
+
           <div className="cardcontainer relative group rounded-xl h-[75vh] overflow-hidden flex items-center justify-center bg-gray-300">
             <img 
               src={Fotboll} 
@@ -37,7 +42,7 @@ const Portfolio = () => {
               ))}
             </h1>
           </div>
-          {/* Knappar under kortet */}
+
           <div className="mt-4 flex gap-4 justify-start">
             <button className="px-6 py-3 border border-white text-white bg-zinc-900 rounded-full hover:bg-white hover:text-black transition-colors">
               mern
@@ -48,8 +53,13 @@ const Portfolio = () => {
           </div>
         </div>
 
-        {/* Andra kortet med knappar under */}
         <div className="flex flex-col w-1/2">
+          
+          <div className="flex items-center gap-2 mb-4">
+            <span className="w-3 h-3 rounded-full bg-white"></span>
+            <span className="text-white text-lg font-semibold">Sustainable E-commerce</span>
+          </div>
+
           <div className="cardcontainer relative group rounded-xl h-[75vh] overflow-hidden flex items-center justify-center bg-black">
             <img 
               src={Ecommerce} 
@@ -68,7 +78,7 @@ const Portfolio = () => {
               ))}
             </h1>
           </div>
-          {/* Knappar under kortet */}
+
           <div className="mt-4 flex gap-4 justify-start">
             <button className="px-6 py-3 border border-white text-white bg-zinc-900 rounded-full hover:bg-white hover:text-black transition-colors">
               stripe
