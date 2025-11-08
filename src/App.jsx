@@ -5,6 +5,7 @@ import { Marquee } from './components/Marquee';
 import Info from './components/Info';
 import { Eyes } from './components/Eyes';
 import Portfolio from './components/Portfolio';
+import Footer from './components/Footer';
 
 
 
@@ -18,7 +19,7 @@ export default function App() {
       <Info/>
       <Eyes/>
       <Portfolio/>
-
+      <Footer/>
       <div className="flex items-center justify-center h-[calc(100vh-64px)]">
         <div className="p-8 rounded-lg shadow-lg">
         </div>
