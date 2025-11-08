@@ -86,26 +86,35 @@ const Info = () => {
             Read More
           </motion.button>
         </div>
-
         <div className="w-1/2 flex justify-end relative">
-          <motion.div
-            className="bg-white w-[70vh] h-[70vh] rounded relative overflow-hidden"
-            whileHover={{ scale: 1.02 }}
-            transition={{ duration: 0.3 }}
-          >
-            <div className="absolute inset-0 flex flex-col justify-center items-center">
-              {Array.from({ length: 12 }).map((_, i) => (
-                <span
-                  key={i}
-                  className="text-[5vw] text-bg-black font-bold opacity-20 whitespace-nowrap transform -rotate-45"
-                  style={{ margin: '-2vh 0' }}
-                >
-                  PICTURE PICTURE PICTURE PICTURE PICTURE PICTURE
-                </span>
-              ))}
-            </div>
-          </motion.div>
-        </div>
+  <motion.div
+    className="bg-green-900 w-[70vh] h-[70vh] rounded relative overflow-hidden"
+    whileHover={{ scale: 1.02 }}
+    transition={{ duration: 0.3 }}
+  >
+    <div className="absolute inset-0 flex flex-col justify-center items-center">
+      {Array.from({ length: 12 }).map((_, i) => (
+        <span
+          key={i}
+          className="text-[5vw] font-bold whitespace-nowrap transform -rotate-45"
+          style={{
+            margin: '-2vh 0',
+            color: i % 2 === 0 ? '#f9cb9c' : '#F66AA2',
+            opacity: 0.9,
+          }}
+        >
+          PICTURE PICTURE PICTURE PICTURE PICTURE PICTURE
+        </span>
+      ))}
+
+      <span className="absolute text-[8vw] font-extrabold text-white">
+        Graphics
+      </span>
+    </div>
+  </motion.div>
+</div>
+
+
       </div>
 
       <div className="border-t-[1px] border-zinc-800 mt-20"></div>

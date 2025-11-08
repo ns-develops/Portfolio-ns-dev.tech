@@ -6,7 +6,6 @@ function LandingPage() {
   const [countdown, setCountdown] = useState(3);
 
   useEffect(() => {
-    // Timer för nedräkning (3, 2, 1)
     if (showVideo && countdown > 0) {
       const countdownTimer = setInterval(() => {
         setCountdown((prev) => prev - 1);
@@ -15,7 +14,6 @@ function LandingPage() {
       return () => clearInterval(countdownTimer);
     }
 
-    // När nedräkningen är klar -> visa sidan
     if (countdown === 0) {
       const timer = setTimeout(() => setShowVideo(false), 1000);
       return () => clearTimeout(timer);
@@ -49,7 +47,6 @@ function LandingPage() {
           playsInline
           className="w-full h-full object-cover"
         />
-        {/* Nedräkning ovanpå videon */}
         <div className="absolute inset-0 flex items-center justify-center">
           <h1
             className="text-[10vw] font-bold"
