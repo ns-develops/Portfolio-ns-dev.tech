@@ -3,11 +3,24 @@ import { SlArrowDown } from "react-icons/sl";
 
 function LandingPage() {
   const [showVideo, setShowVideo] = useState(true);
+  const [countdown, setCountdown] = useState(3);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowVideo(false), 3000);
-    return () => clearTimeout(timer);
-  }, []);
+    // Timer för nedräkning (3, 2, 1)
+    if (showVideo && countdown > 0) {
+      const countdownTimer = setInterval(() => {
+        setCountdown((prev) => prev - 1);
+      }, 1000);
+
+      return () => clearInterval(countdownTimer);
+    }
+
+    // När nedräkningen är klar -> visa sidan
+    if (countdown === 0) {
+      const timer = setTimeout(() => setShowVideo(false), 1000);
+      return () => clearTimeout(timer);
+    }
+  }, [countdown, showVideo]);
 
   const lines = ["NS DEV", "We Create", "Signature"];
   const subtitles = [
@@ -26,17 +39,25 @@ function LandingPage() {
     }
   `;
 
-
   if (showVideo) {
     return (
-      <div className="w-full h-screen bg-black flex items-center justify-center">
+      <div className="relative w-full h-screen bg-black flex items-center justify-center overflow-hidden">
         <video
-          src="brus.mp4"  
+          src="brus.mp4"
           autoPlay
           muted
           playsInline
           className="w-full h-full object-cover"
         />
+        {/* Nedräkning ovanpå videon */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <h1
+            className="text-[10vw] font-bold"
+            style={{ color: "#cb364e", transition: "opacity 0.3s ease" }}
+          >
+            {countdown > 0 ? countdown : ""}
+          </h1>
+        </div>
       </div>
     );
   }
