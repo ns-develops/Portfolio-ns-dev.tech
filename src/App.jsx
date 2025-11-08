@@ -8,6 +8,7 @@ import Portfolio from './components/Portfolio';
 
 
 
+
 export default function App() {
   return (
     <div className="min-h-screen w-full bg-zinc-900 text-white">
@@ -17,6 +18,7 @@ export default function App() {
       <Info/>
       <Eyes/>
       <Portfolio/>
+
       <div className="flex items-center justify-center h-[calc(100vh-64px)]">
         <div className="p-8 rounded-lg shadow-lg">
         </div>

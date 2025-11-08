@@ -1,6 +1,157 @@
 import React, { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
+const Snake = () => {
+  const canvasRef = useRef(null);
+  const gridSize = 20;
+  const canvasSize = 400;
+
+  const [snake, setSnake] = useState([
+    { x: 8, y: 8 },
+    { x: 7, y: 8 },
+    { x: 6, y: 8 },
+  ]);
+  const [direction, setDirection] = useState({ x: 1, y: 0 });
+  const [fruit, setFruit] = useState({ x: 12, y: 8 });
+  const [gameOver, setGameOver] = useState(false);
+  const [gameStarted, setGameStarted] = useState(false);
+
+  const startGame = () => {
+    setSnake([
+      { x: 8, y: 8 },
+      { x: 7, y: 8 },
+      { x: 6, y: 8 },
+    ]);
+    setDirection({ x: 1, y: 0 });
+    setFruit({ x: 12, y: 8 });
+    setGameOver(false);
+    setGameStarted(true);
+  };
+
+  useEffect(() => {
+    const handleKey = (e) => {
+      if (!gameStarted || gameOver) return;
+
+      switch (e.key) {
+        case "ArrowUp":
+          if (direction.y !== 1) setDirection({ x: 0, y: -1 });
+          break;
+        case "ArrowDown":
+          if (direction.y !== -1) setDirection({ x: 0, y: 1 });
+          break;
+        case "ArrowLeft":
+          if (direction.x !== 1) setDirection({ x: -1, y: 0 });
+          break;
+        case "ArrowRight":
+          if (direction.x !== -1) setDirection({ x: 1, y: 0 });
+          break;
+      }
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, [direction, gameStarted, gameOver]);
+
+  const handleCanvasClick = (e) => {
+    if (!gameStarted || gameOver) return;
+
+    const rect = canvasRef.current.getBoundingClientRect();
+    const clickX = Math.floor((e.clientX - rect.left) / gridSize);
+    const clickY = Math.floor((e.clientY - rect.top) / gridSize);
+
+    const head = snake[0];
+
+    const dx = clickX - head.x;
+    const dy = clickY - head.y;
+
+    if (Math.abs(dx) > Math.abs(dy)) {
+      if (dx > 0 && direction.x !== -1) setDirection({ x: 1, y: 0 });
+      else if (dx < 0 && direction.x !== 1) setDirection({ x: -1, y: 0 });
+    } else {
+      if (dy > 0 && direction.y !== -1) setDirection({ x: 0, y: 1 });
+      else if (dy < 0 && direction.y !== 1) setDirection({ x: 0, y: -1 });
+    }
+  };
+
+  useEffect(() => {
+    if (!gameStarted || gameOver) return;
+
+    const interval = setInterval(() => {
+      setSnake((prev) => {
+        const head = { x: prev[0].x + direction.x, y: prev[0].y + direction.y };
+
+        if (
+          head.x < 0 ||
+          head.x >= canvasSize / gridSize ||
+          head.y < 0 ||
+          head.y >= canvasSize / gridSize ||
+          prev.some((segment) => segment.x === head.x && segment.y === head.y)
+        ) {
+          setGameOver(true);
+          setGameStarted(false);
+          return prev;
+        }
+
+        let newSnake = [head, ...prev];
+
+        if (head.x === fruit.x && head.y === fruit.y) {
+          setFruit({
+            x: Math.floor(Math.random() * (canvasSize / gridSize)),
+            y: Math.floor(Math.random() * (canvasSize / gridSize)),
+          });
+        } else {
+          newSnake.pop();
+        }
+
+        return newSnake;
+      });
+    }, 150);
+
+    return () => clearInterval(interval);
+  }, [direction, fruit, gameOver, gameStarted]);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext("2d");
+
+    ctx.fillStyle = "#ffffff";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    if (gameStarted) {
+      ctx.fillStyle = "red";
+      ctx.fillRect(fruit.x * gridSize, fruit.y * gridSize, gridSize, gridSize);
+
+      ctx.fillStyle = "pink";
+      snake.forEach((segment) =>
+        ctx.fillRect(segment.x * gridSize, segment.y * gridSize, gridSize, gridSize)
+      );
+    } else {
+      ctx.fillStyle = "black";
+      ctx.font = "20px Arial";
+      ctx.fillText(
+        gameOver ? "Game Over - Click to Restart" : "Click to Start",
+        80,
+        canvasSize / 2
+      );
+    }
+  }, [snake, fruit, gameStarted, gameOver]);
+
+  return (
+    <div>
+      <canvas
+        ref={canvasRef}
+        width={canvasSize}
+        height={canvasSize}
+        onClick={(e) => {
+          if (!gameStarted) startGame(); 
+          handleCanvasClick(e);          
+        }}
+        style={{ cursor: "pointer" }}
+      />
+    </div>
+  );
+};
+
+
 const Cartoon = () => {
   const canvasRef = useRef(null);
   const [imgSrc, setImgSrc] = useState(null);
@@ -80,13 +231,11 @@ const Cartoon = () => {
         onChange={handleUpload}
         className="mb-5 ml-60"
       />
-      <canvas
-        ref={canvasRef}
-        className="border border-gray-300"
-      />
-    </div>  
+      <canvas ref={canvasRef} className="border border-gray-300" />
+    </div>
   );
 };
+
 
 const Info = () => {
   return (
@@ -100,7 +249,6 @@ const Info = () => {
         <p className="text-left relative hover:bg-gray-200 hover:bg-opacity-50 transition-colors duration-300 px-2">
           "
         </p>
-
         <p className="text-left relative hover:bg-gray-200 hover:bg-opacity-50 transition-colors duration-300 px-2">
           It all began with my passion for programming in 2020, which eventually led me to earn a university degree in App and Web Development from the University of Gothenburg.
         </p>
@@ -130,17 +278,12 @@ const Info = () => {
         </p>
       </div>
 
+
       <div className="w-full flex gap-5 border-t-[1px] mt-20 border-zinc-800 pt-10">
-        <div className="w-1/2">
-          <h1 className="text-7xl font-[Neue_Montreal]">Approach:</h1>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="flex items-center gap-10 px-10 py-6 bg-zinc-900 mt-10 rounded-full text-white"
-          >
-            Read More
-          </motion.button>
+        <div className="w-1/2 flex justify-start relative mt-20 ml-20">
+          <Snake />
         </div>
+
         <div className="w-1/2 flex justify-end relative">
           <motion.div
             className="bg-green-900 w-[70vh] h-[70vh] rounded relative overflow-hidden"
@@ -167,6 +310,17 @@ const Info = () => {
             </div>
           </motion.div>
         </div>
+      </div>
+
+      <div className="w-1/2 mt-10">
+        <h1 className="text-7xl font-[Neue_Montreal]">Approach:</h1>
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="flex items-center gap-10 px-10 py-6 bg-zinc-900 mt-10 rounded-full text-white"
+        >
+          Read More
+        </motion.button>
       </div>
 
       <div className="flex justify-center mt-20">
