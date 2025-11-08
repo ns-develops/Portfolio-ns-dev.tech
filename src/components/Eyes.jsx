@@ -66,7 +66,7 @@ export const Eyes = () => {
         </h2>
 
         <h2 className="absolute top-[10%] right-[5%] text-[2vw] font-montserrat text-zinc-900 select-none tracking-widest">
-          NO.1
+          EST.
         </h2>
 
         {overlayOpacity > 0 && (
