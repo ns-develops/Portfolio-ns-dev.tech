@@ -4,8 +4,8 @@ import { motion } from 'framer-motion';
 const Info = () => {
   return (
     <motion.div
-    className="relative -mt-3 w-full p-20 bg-white rounded-tl-3xl rounded-tr-3xl text-black z-10"
-    initial={{ opacity: 0, y: 100 }}
+      className="relative -mt-3 w-full p-20 bg-white rounded-tl-3xl rounded-tr-3xl text-black z-10"
+      initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: 'easeOut' }}
     >
@@ -17,7 +17,7 @@ const Info = () => {
           With over five years of experience in web and native mobile development, I have worked with full service applications with modern technologies such as React, TypeScript, and Node.js. I am passionate about design, creating user-friendly applications that solve real-world problems.
         </p>
         <p className="text-left">
-         I spend a lot of my time learning new technologies, contributing to open-source projects, and exploring creative solutions to complex problems.
+          I spend a lot of my time learning new technologies, contributing to open-source projects, and exploring creative solutions to complex problems.
         </p>
       </div>
 
@@ -34,10 +34,10 @@ const Info = () => {
         <p className="text-right">
           But it’s also a journey of constant learning — exploring new tools, keeping up with trends, and finding fresh ways to express creativity through technology. At its core, being a creative designer in web development is about storytelling: crafting meaningful digital experiences that connect people and ideas.
         </p>
-     
       </div>
 
-      <div className="w-full flex gap-5 border-t-[1px] mt-20 border-[#CDEA68] pt-10">
+      {/* Övre svarta linjen */}
+      <div className="w-full flex gap-5 border-t-[1px] mt-20 border-zinc-800 pt-10">
         <div className="w-1/2">
           <h1 className="text-7xl font-[Neue_Montreal]">Approach:</h1>
           <motion.button
@@ -69,6 +69,9 @@ const Info = () => {
           </motion.div>
         </div>
       </div>
+
+      {/* Nedre svarta linjen */}
+      <div className="border-t-[1px] border-zinc-800 mt-20"></div>
     </motion.div>
   );
 };
