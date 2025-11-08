@@ -44,13 +44,14 @@ const Portfolio = () => {
           </div>
 
           <div className="mt-4 flex gap-4 justify-start">
-            <button className="px-6 py-3 border border-white text-white bg-zinc-900 rounded-full hover:bg-white hover:text-black transition-colors">
-              mern
-            </button>
-            <button className="px-6 py-3 border border-white text-white bg-zinc-900 rounded-full hover:bg-white hover:text-black transition-colors">
-              json webtoken
-            </button>
-          </div>
+  <button className="px-4 py-2 text-sm border border-white text-white bg-zinc-900 rounded-full hover:bg-white hover:text-black transition-colors">
+    mern
+  </button>
+  <button className="px-4 py-2 text-sm border border-white text-white bg-zinc-900 rounded-full hover:bg-white hover:text-black transition-colors">
+    json webtoken
+  </button>
+</div>
+
         </div>
 
         <div className="flex flex-col w-1/2">
@@ -78,15 +79,15 @@ const Portfolio = () => {
               ))}
             </h1>
           </div>
-
           <div className="mt-4 flex gap-4 justify-start">
-            <button className="px-6 py-3 border border-white text-white bg-zinc-900 rounded-full hover:bg-white hover:text-black transition-colors">
-              stripe
-            </button>
-            <button className="px-6 py-3 border border-white text-white bg-zinc-900 rounded-full hover:bg-white hover:text-black transition-colors">
-              e-commerce
-            </button>
-          </div>
+  <button className="px-4 py-2 text-sm border border-white text-white bg-zinc-900 rounded-full hover:bg-white hover:text-black transition-colors">
+    stripe
+  </button>
+  <button className="px-4 py-2 text-sm border border-white text-white bg-zinc-900 rounded-full hover:bg-white hover:text-black transition-colors">
+    e-commerce
+  </button>
+</div>
+
         </div>
 
       </div>
