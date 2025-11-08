@@ -4,8 +4,8 @@ import { motion } from 'framer-motion';
 const Info = () => {
   return (
     <motion.div
-      className="relative -mt-3 w-full p-20 bg-white rounded-tl-3xl rounded-tr-3xl text-black z-10"
-      initial={{ opacity: 0, y: 100 }}
+    className="relative -mt-3 w-full p-20 bg-white text-black z-10"
+    initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: 'easeOut' }}
 
