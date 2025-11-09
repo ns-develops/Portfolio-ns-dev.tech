@@ -1,16 +1,27 @@
+import React from 'react';
+
 export default function Navbar() {
+  const items = ["Portfolio", "Info", "Reviews", "Contact"];
+
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id.toLowerCase());
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <nav className="fixed z-[999] w-full px-20 py-8 font-neuemontreal text-black flex justify-between items-center">
       <div className="logo"></div>
       <div className="links flex gap-10">
-        {[, "Portfolio", "Info", "Reviews", "Contact"].map((item, index) => (
-          <a 
-            key={index} 
-            href="#" 
-            className={`text-lg capitalize font-light ${index === 4 ? "ml-32" : ""}`}
+        {items.map((item, index) => (
+          <button
+            key={index}
+            onClick={() => scrollToSection(item)}
+            className="text-lg capitalize font-light"
           >
-            {item} 
-          </a>
+            {item}
+          </button>
         ))}
       </div>
     </nav>
