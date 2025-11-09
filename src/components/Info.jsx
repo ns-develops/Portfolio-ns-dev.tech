@@ -268,7 +268,7 @@ const Info = () => {
           There’s a unique satisfaction in seeing your ideas take shape on the screen, knowing that design decisions you make can impact how someone experiences a product or a brand.
         </p>
         <p className="text-right hover:bg-gray-200 hover:bg-opacity-50 px-2">
-          But it’s också a journey of constant learning — exploring new tools, keeping up with trends, and finding fresh ways to express creativity through technology. At its core, being a creative designer in web development is about storytelling: crafting meaningful digital experiences that connect people and ideas.
+          But it’s also a journey of constant learning — exploring new tools, keeping up with trends, and finding fresh ways to express creativity through technology. At its core, being a creative designer in tech development is about storytelling: crafting meaningful digital experiences that connect people and ideas.
         </p>
         <p className="text-right hover:bg-gray-200 hover:bg-opacity-50 px-2">"</p>
       </div>
