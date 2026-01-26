@@ -1,25 +1,27 @@
-import React from "react";
 import { motion } from "framer-motion";
-import Fotboll from "../assets/bildfotboll.png";
-import Ecommerce from "../assets/ecommerce1.png";
+import Fotboll from "../assets/football.png";
+import Ecommerce from "../assets/testphone.png";
 
 const Portfolio = () => {
-  const fyde = "FYDE";
-  const vise = "VISE";
+  const fyde = "";
+  const vise = "";
 
   return (
-    <div className="w-full bg-zinc-900 text-white min-h-screen">
-      <div className="w-full px-20 border-b-[1px] border-zinc-800 pb-32">
-        <h1 className="text-8xl font-['Neue_Montreal'] tracking-tight font-semibold">
+    <div className="w-full bg-white text-black min-h-screen">
+      {/* Header Section */}
+      <div className="w-full px-6 md:px-20 border-b-[1px] border-zinc-800 pb-4 md:pb-8">
+        <h1 className="text-4xl md:text-8xl font-['Neue_Montreal'] tracking-tight font-semibold">
           Featured projects
         </h1>
       </div>
 
-      <div className="px-20 mt-20 flex gap-10 relative">
-        <div className="flex flex-col w-1/2">
+      {/* Projects Section */}
+      <div className="px-6 md:px-20 mt-10 md:mt-20 flex flex-col md:flex-row gap-10">
+        {/* Project 1 */}
+        <div className="flex flex-col w-full md:w-1/2">
           <div className="flex items-center gap-2 mb-4">
-            <span className="w-3 h-3 rounded-full bg-white"></span>
-            <span className="text-white text-sm font-semibold">Sportly.se</span>
+            <span className="w-3 h-3 rounded-full bg-black"></span>
+            <span className="text-black text-sm font-semibold">Sportly.se</span>
           </div>
 
           <a
@@ -29,16 +31,16 @@ const Portfolio = () => {
             className="block"
           >
             <motion.div
-              className="cardcontainer relative group rounded-xl h-[75vh] overflow-hidden flex items-center justify-center bg-gray-300 cursor-pointer"
+              className="cardcontainer relative group rounded-xl h-64 md:h-[75vh] overflow-hidden flex items-center justify-center bg-gray-200 cursor-pointer"
               whileHover={{ scale: 0.95, filter: "brightness(0.8)" }}
-              transition={{ type: 'spring', stiffness: 200, damping: 18 }}
+              transition={{ type: "spring", stiffness: 200, damping: 18 }}
             >
               <img
                 src={Fotboll}
                 alt="Fotboll"
-                className="w-6/12 h-6/12 object-cover rounded-xl shadow-lg"
+                className="w-8/12 md:w-6/12 h-auto object-cover rounded-xl shadow-lg"
               />
-              <h1 className="absolute top-1/2 right-[20%] -translate-y-1/2 text-6xl font-bold text-[#CDEA68] flex">
+              <h1 className="absolute top-1/2 right-1/4 md:right-[20%] -translate-y-1/2 text-3xl md:text-6xl font-bold text-[#CDEA68] flex">
                 {fyde.split("").map((letter, index) => (
                   <span
                     key={index}
@@ -52,20 +54,21 @@ const Portfolio = () => {
             </motion.div>
           </a>
 
-          <div className="mt-4 flex gap-4 justify-start">
-            <button className="px-4 py-2 text-sm border border-white text-white bg-zinc-900 rounded-full hover:bg-white hover:text-black transition-colors">
+          <div className="mt-4 flex gap-2 md:gap-4 flex-wrap">
+            <button className="px-4 py-2 text-sm border border-black text-black bg-white rounded-full hover:bg-black hover:text-white transition-colors">
               mern
             </button>
-            <button className="px-4 py-2 text-sm border border-white text-white bg-zinc-900 rounded-full hover:bg-white hover:text-black transition-colors">
+            <button className="px-4 py-2 text-sm border border-black text-black bg-white rounded-full hover:bg-black hover:text-white transition-colors">
               json webtoken
             </button>
           </div>
         </div>
 
-        <div className="flex flex-col w-1/2">
+        {/* Project 2 */}
+        <div className="flex flex-col w-full md:w-1/2">
           <div className="flex items-center gap-2 mb-4">
-            <span className="w-3 h-3 rounded-full bg-white"></span>
-            <span className="text-white text-sm font-semibold">
+            <span className="w-3 h-3 rounded-full bg-black"></span>
+            <span className="text-black text-sm font-semibold">
               Sustainable E-commerce
             </span>
           </div>
@@ -77,16 +80,16 @@ const Portfolio = () => {
             className="block"
           >
             <motion.div
-              className="cardcontainer relative group rounded-xl h-[75vh] overflow-hidden flex items-center justify-center bg-black cursor-pointer"
+              className="cardcontainer relative group rounded-xl h-64 md:h-[75vh] overflow-hidden flex items-center justify-center bg-gray-200 cursor-pointer"
               whileHover={{ scale: 0.95, filter: "brightness(0.8)" }}
-              transition={{ type: 'spring', stiffness: 200, damping: 18 }}
+              transition={{ type: "spring", stiffness: 200, damping: 18 }}
             >
               <img
                 src={Ecommerce}
                 alt="Ecommerce"
-                className="w-6/12 h-6/12 object-cover shadow-lg"
+                className="w-8/12 md:w-6/12 h-auto object-cover rounded-xl shadow-lg"
               />
-              <h1 className="absolute top-1/2 left-[20%] -translate-y-1/2 text-6xl font-bold text-[#CDEA68] flex">
+              <h1 className="absolute top-1/2 left-1/4 md:left-[20%] -translate-y-1/2 text-3xl md:text-6xl font-bold text-[#CDEA68] flex">
                 {vise.split("").map((letter, index) => (
                   <span
                     key={index}
@@ -100,11 +103,11 @@ const Portfolio = () => {
             </motion.div>
           </a>
 
-          <div className="mt-4 flex gap-4 justify-start">
-            <button className="px-4 py-2 text-sm border border-white text-white bg-zinc-900 rounded-full hover:bg-white hover:text-black transition-colors">
+          <div className="mt-4 flex gap-2 md:gap-4 flex-wrap">
+            <button className="px-4 py-2 text-sm border border-black text-black bg-white rounded-full hover:bg-black hover:text-white transition-colors">
               stripe
             </button>
-            <button className="px-4 py-2 text-sm border border-white text-white bg-zinc-900 rounded-full hover:bg-white hover:text-black transition-colors">
+            <button className="px-4 py-2 text-sm border border-black text-black bg-white rounded-full hover:bg-black hover:text-white transition-colors">
               e-commerce
             </button>
           </div>

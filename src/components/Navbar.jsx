@@ -17,7 +17,7 @@ export default function Navbar() {
           <button
             key={index}
             onClick={() => scrollToSection(item)}
-            className={`relative text-lg capitalize font-light group overflow-hidden ${
+            className={`relative text-sm capitalize font-light group overflow-hidden ${
               item === "Contact" ? "ml-16" : ""
             }`}
           >

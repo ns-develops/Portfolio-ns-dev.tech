@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import pictureMe from "../assets/new.jpg"; // importerar bilden
 
 const Snake = () => {
   const canvasRef = useRef(null);
@@ -103,7 +104,6 @@ const Snake = () => {
     const ctx = canvas.getContext("2d");
 
     if (!gameStarted) {
-  
       const half = canvasSize / 2;
       ctx.fillStyle = "#89CFF0"; 
       ctx.fillRect(0, 0, half, half);
@@ -114,7 +114,6 @@ const Snake = () => {
       ctx.fillStyle = "#FFA500"; 
       ctx.fillRect(half, half, half, half);
     } else {
-    
       ctx.fillStyle = "#ffffff";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
     }
@@ -127,7 +126,6 @@ const Snake = () => {
         ctx.fillRect(segment.x * gridSize, segment.y * gridSize, gridSize, gridSize)
       );
     } else {
-  
       ctx.fillStyle = "#ffffff";
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
@@ -138,7 +136,6 @@ const Snake = () => {
       ctx.fillText("SNAKE!", centerX, centerY - 100);
       ctx.fillText("SNAKE!", centerX, centerY - 60);
       ctx.fillText("SNAKE!", centerX, centerY - 20);
-
 
       ctx.font = "bold 28px Arial";
       ctx.fillText(
@@ -235,83 +232,34 @@ const Cartoon = () => {
   );
 };
 
+
 const Info = () => {
   return (
     <motion.div
-      className="relative -mt-3 w-full p-20 bg-white text-black z-10"
+      className="flex flex-col justify-center items-center w-full min-h-screen bg-white text-black px-6 md:px-20 lg:px-32 py-10"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: "easeOut" }}
     >
-      {/* TEXT DEL 1 */}
-      <div className="flex flex-col gap-6 text-[3vw] leading-[4.5vw] font-mono">
-        <p className="text-left hover:bg-gray-200 hover:bg-opacity-50 px-2">"</p>
-        <p className="text-left hover:bg-gray-200 hover:bg-opacity-50 px-2">
-          It all began with my passion for programming in 2020, which eventually led me to earn a university degree in App and Web Development from the University of Gothenburg.
-        </p>
-        <p className="text-right hover:bg-gray-200 hover:bg-opacity-50 px-2">
-          With over five years of experience in web and native mobile development, I have worked with full service applications with modern technologies such as React, TypeScript, and Node.js. I am passionate about design, creating user-friendly applications that solve real-world problems.
-        </p>
-        <p className="text-left hover:bg-gray-200 hover:bg-opacity-50 px-2">
-          I spend a lot of my time learning new technologies, contributing to open-source projects, and exploring creative solutions to complex problems.
-        </p>
-      </div>
+   {/* Bild ovanför rubriken */}
+<img
+  src={pictureMe}
+  alt="Picture of me"
+  className="w-full max-w-md h-auto mb-6 object-cover"
+/>
 
-      <div className="flex flex-col gap-6 mt-10 text-[3vw] leading-[4.5vw] font-mono">
-        <p className="text-left hover:bg-gray-200 hover:bg-opacity-50 px-2">
-          Life as a creative designer is a constant blend of art and logic — a space where imagination meets technology. Every day brings a new challenge: transforming ideas into digital experiences that are not only functional but also visually engaging.
-        </p>
-        <p className="text-right hover:bg-gray-200 hover:bg-opacity-50 px-2">
-          It’s about understanding how people interact with design, how colors, typography, and layout influence emotion, and how every line of code brings a vision to life. As a creative designer, you live at the intersection of design and development — sketching wireframes in the morning and refining animations or front-end components by the afternoon.
-        </p>
-        <p className="text-left hover:bg-gray-200 hover:bg-opacity-50 px-2">
-          There’s a unique satisfaction in seeing your ideas take shape on the screen, knowing that design decisions you make can impact how someone experiences a product or a brand.
-        </p>
-        <p className="text-right hover:bg-gray-200 hover:bg-opacity-50 px-2">
-          But it’s also a journey of constant learning — exploring new tools, keeping up with trends, and finding fresh ways to express creativity through technology. At its core, being a creative designer in tech development is about storytelling: crafting meaningful digital experiences that connect people and ideas.
-        </p>
-        <p className="text-right hover:bg-gray-200 hover:bg-opacity-50 px-2">"</p>
-      </div>
 
-      <div className="w-full flex gap-5 border-t mt-20 border-zinc-800 pt-10">
-        <div className="w-1/2 flex justify-start mt-20 ml-20">
-          <Snake />
-        </div>
+      {/* Om mig rubrik */}
+      <h2 className="text-4xl font-bold mb-6 text-center">Om mig</h2>
 
-        <div className="w-1/2 flex justify-end relative">
-          <motion.div
-            className="bg-green-900 w-[70vh] h-[70vh] rounded relative overflow-hidden"
-            whileHover={{ scale: 1.02 }}
-            transition={{ duration: 0.3 }}
-          >
-            <div className="absolute inset-0 flex flex-col justify-center items-center">
-              {Array.from({ length: 12 }).map((_, i) => (
-                <span
-                  key={i}
-                  className="text-[5vw] font-bold whitespace-nowrap transform -rotate-45"
-                  style={{
-                    margin: "-2vh 0",
-                    color: i % 2 === 0 ? "#f9cb9c" : "#F66AA2",
-                    opacity: 0.9,
-                  }}
-                >
-                  PICTURE PICTURE PICTURE PICTURE PICTURE PICTURE
-                </span>
-              ))}
-              <span className="absolute text-[8vw] font-extrabold text-white">
-                Graphics
-              </span>
-            </div>
-          </motion.div>
-        </div>
-      </div>
-
-      <div className="flex justify-center mt-20">
-        <Cartoon />
-      </div>
+      {/* Texten */}
+      <p className="w-full max-w-[90%] md:max-w-[80%] lg:max-w-[70%] text-center text-[clamp(16px,2vw,22px)] leading-[clamp(24px,3vw,32px)] font-mono">
+        It all began with my passion for programming in 2020, which eventually led me to earn a university degree in App and Web Development from the University of Gothenburg. With over five years of experience in web and native mobile development, I have worked with full service applications with modern technologies such as React, TypeScript, and Node.js. I am passionate about design, creating user-friendly applications that solve real-world problems. I spend a lot of my time learning new technologies, contributing to open-source projects, and exploring creative solutions to complex problems. Life as a creative designer is a constant blend of art and logic — a space where imagination meets technology. It’s about understanding how people interact with design, how colors, typography, and layout influence emotion. There’s a unique satisfaction in seeing your ideas take shape on the screen. At its core, being a creative designer in tech development is about storytelling.
+      </p>
     </motion.div>
   );
 };
 
-export default Info;
 
+
+export default Info;

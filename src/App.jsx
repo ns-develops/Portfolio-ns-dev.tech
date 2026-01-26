@@ -1,9 +1,9 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import LandingPage from './components/LandingPage';
-import { Marquee } from './components/Marquee';
+//import { Marquee } from './components/Marquee';
 import Info from './components/Info';
-import { Eyes } from './components/Eyes';
+//import { Eyes } from './components/Eyes';
 import Portfolio from './components/Portfolio';
 import Footer from './components/Footer';
 
@@ -13,13 +13,13 @@ export default function App() {
       <Navbar />
 
       <LandingPage />
-      <Marquee />
+   {/*   <Marquee />*/}
 
       <section id="info">
         <Info />
       </section>
 
-      <Eyes />
+   {/*   <Eyes />*/}
 
       <section id="portfolio">
         <Portfolio />
