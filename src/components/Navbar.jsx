@@ -17,7 +17,7 @@ export default function Navbar() {
       <div className="flex justify-between items-center">
 
         {/* LOGO / NAME (valfritt) */}
-        <span className="text-sm font-light">Your Name</span>
+        <span className="text-sm font-light"></span>
 
         {/* DESKTOP LINKS */}
         <div className="hidden md:flex gap-10 items-center">
