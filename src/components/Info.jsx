@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import pictureMe from "../assets/new.jpg"; // importerar bilden
 
+// --- Snake Component ---
 const Snake = () => {
   const canvasRef = useRef(null);
   const gridSize = 20;
@@ -162,6 +163,7 @@ const Snake = () => {
   );
 };
 
+// --- Cartoon Component ---
 const Cartoon = () => {
   const canvasRef = useRef(null);
   const [imgSrc, setImgSrc] = useState(null);
@@ -232,22 +234,21 @@ const Cartoon = () => {
   );
 };
 
-
+// --- Info Component ---
 const Info = () => {
   return (
     <motion.div
-      className="flex flex-col justify-center items-center w-full min-h-screen bg-white text-black px-6 md:px-20 lg:px-32 py-10"
+      className="flex flex-col justify-center items-center w-full min-h-screen bg-white text-black px-6 md:px-20 lg:px-32 pt-10 pb-32"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: "easeOut" }}
     >
-   {/* Bild ovanför rubriken */}
-<img
-  src={pictureMe}
-  alt="Picture of me"
-  className="w-full max-w-md h-auto mb-6 object-cover"
-/>
-
+      {/* Bild ovanför rubriken */}
+      <img
+        src={pictureMe}
+        alt="Picture of me"
+        className="w-full max-w-md h-auto mb-6 object-cover"
+      />
 
       {/* Om mig rubrik */}
       <h2 className="text-4xl font-bold mb-6 text-center">Om mig</h2>
@@ -259,7 +260,5 @@ const Info = () => {
     </motion.div>
   );
 };
-
-
 
 export default Info;
