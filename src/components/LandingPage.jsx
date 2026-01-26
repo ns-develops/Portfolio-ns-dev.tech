@@ -1,29 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { SlArrowDown } from "react-icons/sl";
 
 function LandingPage() {
-  // Remove the video-related state
-  // const [showVideo, setShowVideo] = useState(true);
-  // const [countdown, setCountdown] = useState(3);
-
-  // Comment out the countdown effect
-  /*
-  useEffect(() => {
-    if (showVideo && countdown > 0) {
-      const countdownTimer = setInterval(() => {
-        setCountdown((prev) => prev - 1);
-      }, 1000);
-
-      return () => clearInterval(countdownTimer);
-    }
-
-    if (countdown === 0) {
-      const timer = setTimeout(() => setShowVideo(false), 1000);
-      return () => clearTimeout(timer);
-    }
-  }, [countdown, showVideo]);
-  */
-
   const lines = ["NS DEV", "We Create", "Signature"];
   const subtitles = [
     "Empowering startups and enterprise-level businesses",
@@ -45,27 +23,32 @@ function LandingPage() {
     <div className="w-full h-screen bg-white pt-1">
       <style>{styles}</style>
 
-      <div className="px-20 textstructure mt-10 pt-20">
-        <div className="space-y-6">
+      <div className="px-6 md:px-20 textstructure mt-10 pt-20">
+        <div className="space-y-4 md:space-y-6">
           {lines.map((item, index) => (
             <div
               key={index}
               className="masker font-[Founders_Grotesk] font-semibold"
             >
-              <h1 className="uppercase text-black text-9xl leading-[5.5vw] tracking-tighter">
+              <h1 className="
+                uppercase text-black 
+                text-[12vw] sm:text-[10vw] md:text-9xl
+                leading-[10vw] sm:leading-[8vw] md:leading-[5.5vw]
+                tracking-tighter
+              ">
                 {item}
               </h1>
             </div>
           ))}
         </div>
 
-        <div className="border-t-[1px] border-zinc-800 mt-32"></div>
+        <div className="border-t-[1px] border-zinc-800 mt-20 md:mt-32"></div>
 
-        <div className="flex justify-between mt-4">
+        <div className="flex justify-between mt-4 gap-4">
           {subtitles.map((item, index) => (
             <p
               key={index}
-              className="text-md font-light tracking-tight leading-none text-zinc-700"
+              className="text-sm md:text-md font-light tracking-tight leading-snug text-zinc-700 max-w-[45%]"
             >
               {item}
             </p>
@@ -73,7 +56,7 @@ function LandingPage() {
         </div>
 
         <div className="flex justify-center mt-10">
-          <SlArrowDown className="text-4xl" style={blinkStyle} />
+          <SlArrowDown className="text-3xl md:text-4xl" style={blinkStyle} />
         </div>
       </div>
     </div>
