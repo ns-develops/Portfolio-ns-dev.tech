@@ -2,7 +2,6 @@ import React, { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import pictureMe from "../assets/new.jpg"; // importerar bilden
 
-// --- Snake Component ---
 const Snake = () => {
   const canvasRef = useRef(null);
   const gridSize = 20;
@@ -163,7 +162,6 @@ const Snake = () => {
   );
 };
 
-// --- Cartoon Component ---
 const Cartoon = () => {
   const canvasRef = useRef(null);
   const [imgSrc, setImgSrc] = useState(null);
@@ -234,7 +232,6 @@ const Cartoon = () => {
   );
 };
 
-// --- Info Component ---
 const Info = () => {
   return (
     <motion.div
@@ -243,19 +240,16 @@ const Info = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: "easeOut" }}
     >
-      {/* Bild ovanför rubriken */}
       <img
         src={pictureMe}
         alt="Picture of me"
         className="w-full max-w-md h-auto mb-6 object-cover"
       />
 
-      {/* Om mig rubrik */}
       <h2 className="text-4xl font-bold mb-6 text-center">Om mig</h2>
 
-      {/* Texten */}
       <p className="w-full max-w-[90%] md:max-w-[80%] lg:max-w-[70%] text-center text-[clamp(16px,2vw,22px)] leading-[clamp(24px,3vw,32px)] font-mono">
-        It all began with my passion for programming in 2020, which eventually led me to earn a university degree in App and Web Development from the University of Gothenburg. With over five years of experience in web and native mobile development, I have worked with full service applications with modern technologies such as React, TypeScript, and Node.js. I am passionate about design, creating user-friendly applications that solve real-world problems. I spend a lot of my time learning new technologies, contributing to open-source projects, and exploring creative solutions to complex problems. Life as a creative designer is a constant blend of art and logic — a space where imagination meets technology. It’s about understanding how people interact with design, how colors, typography, and layout influence emotion. There’s a unique satisfaction in seeing your ideas take shape on the screen. At its core, being a creative designer in tech development is about storytelling.
+        It all began with my passion for programming in 2020, which eventually led me to earn a university degree in App and Web Development from the University of Gothenburg. With over five years of experience in web and native mobile development, I have worked with full service applications with modern technologies such as React, TypeScript, and Node.js. I am passionate about design, finding solutions, creating user-friendly applications that solve real-world problems. I spend a lot of my time learning new technologies, contributing to open-source projects, and exploring creative solutions to complex problems. It is a constant blend of art and logic, a space where imagination meets technology. It’s about understanding how people interact with design, how colors, typography, and layout influence emotion. There’s a unique satisfaction in seeing ideas take shape on the screen. At its core, being a creative in tech development is about storytelling.
       </p>
     </motion.div>
   );

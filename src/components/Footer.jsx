@@ -6,7 +6,6 @@ const Footer = () => {
   return (
     <div className='w-full flex flex-col md:flex-row justify-between items-start h-screen bg-white p-6 md:p-20'>
       
-      {/* LEFT */}
       <div className='w-full md:w-1/2 font-["Founders_Grotesk_X-Condensed] mt-10 md:mt-28'>
         <div className="inline-block">
           <h1 className='text-[14vw] md:text-9xl font-semibold uppercase leading-none text-black'>
@@ -37,7 +36,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* RIGHT */}
       <div className='w-full md:w-auto flex flex-col gap-4 text-right mt-10 md:mt-28'>
         <h1 className='text-[10vw] md:text-[5vw] font-semibold uppercase leading-none text-black'>Contact</h1>
         <div className="dets flex flex-col gap-2 text-sm md:text-base">

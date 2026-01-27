@@ -8,16 +8,13 @@ const Portfolio = () => {
 
   return (
     <div className="w-full bg-white text-black min-h-screen">
-      {/* Header Section */}
       <div className="w-full px-6 md:px-20 border-b-[1px] border-zinc-800 pb-4 md:pb-8">
         <h1 className="text-4xl md:text-8xl font-['Neue_Montreal'] tracking-tight font-semibold">
           Featured projects
         </h1>
       </div>
 
-      {/* Projects Section */}
       <div className="px-6 md:px-20 mt-10 md:mt-20 flex flex-col md:flex-row gap-10">
-        {/* Project 1 */}
         <div className="flex flex-col w-full md:w-1/2">
           <div className="flex items-center gap-2 mb-4">
             <span className="w-3 h-3 rounded-full bg-black"></span>
@@ -64,7 +61,6 @@ const Portfolio = () => {
           </div>
         </div>
 
-        {/* Project 2 */}
         <div className="flex flex-col w-full md:w-1/2">
           <div className="flex items-center gap-2 mb-4">
             <span className="w-3 h-3 rounded-full bg-black"></span>

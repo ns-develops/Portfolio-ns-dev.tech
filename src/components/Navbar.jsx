@@ -16,10 +16,8 @@ export default function Navbar() {
     <nav className="fixed z-[999] w-full px-6 md:px-20 py-6 font-neuemontreal text-black bg-white">
       <div className="flex justify-between items-center">
 
-        {/* LOGO / NAME (valfritt) */}
         <span className="text-sm font-light"></span>
 
-        {/* DESKTOP LINKS */}
         <div className="hidden md:flex gap-10 items-center">
           {items.map((item, index) => (
             <button
@@ -40,7 +38,6 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* HAMBURGER */}
         <button
           onClick={() => setOpen(!open)}
           className="md:hidden flex flex-col gap-1"
@@ -51,7 +48,6 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* MOBILE MENU */}
       {open && (
         <div className="md:hidden mt-10 flex flex-col gap-6">
           {items.map((item, index) => (
