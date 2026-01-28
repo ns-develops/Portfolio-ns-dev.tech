@@ -240,19 +240,22 @@ const Info = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: "easeOut" }}
     >
-    {/*  <img
+     <img
         src={pictureMe}
         alt="Picture of me"
         className="w-full max-w-md h-auto mb-6 object-cover"
-      />*/}
+      />
 
       <h2 className="text-4xl font-bold mb-6 text-center">Om mig</h2>
 
       <p className="w-full max-w-[90%] md:max-w-[80%] lg:max-w-[70%] text-center text-[clamp(16px,2vw,22px)] leading-[clamp(24px,3vw,32px)] font-mono">
-        It all began with my passion for programming in 2020, which eventually led me to earn a university degree in App and Web Development from the University of Gothenburg. With over five years of experience in web and native mobile development, I have worked with full service applications with modern technologies such as React, TypeScript, and Node.js. I am passionate about design, finding solutions, creating user-friendly applications that solve real-world problems. I spend a lot of my time learning new technologies, contributing to open-source projects, and exploring creative solutions to complex problems. It is a constant blend of art and logic, a space where imagination meets technology. It’s about understanding how people interact with design, how colors, typography, and layout influence emotion. There’s a unique satisfaction in seeing ideas take shape on the screen. At its core, being a creator in tech development is about storytelling.
-      </p>
+Allt började med min passion för programmering 2020, vilket så småningom ledde till att jag tog en universitetsexamen som app- och webbutvecklare vid Göteborgs universitet. Med över fem års erfarenhet av webb- och native-mobilutveckling har jag arbetat med fullskaliga applikationer och moderna tekniker som React, TypeScript och Node.js.
+Jag brinner för design, problemlösning och att skapa användarvänliga applikationer som löser verkliga problem. Jag lägger mycket tid på att lära mig nya teknologier, bidra till open source-projekt och utforska kreativa lösningar på komplexa utmaningar.
+Det är en ständig blandning av konst och logik, en plats där fantasi möter teknik. Det handlar om att förstå hur människor interagerar med design, hur färger, typografi och layout påverkar känslor. Det finns en unik tillfredsställelse i att se idéer ta form på skärmen. </p>
     </motion.div>
   );
 };
 
 export default Info;
+
+// At its core, being a creator in tech development is about storytelling.
