@@ -141,7 +141,6 @@ const Portfolio = () => {
 
   <div className="mt-4 flex gap-2 flex-wrap">
     <button className="px-4 py-2 text-sm border rounded-full">saas</button>
-    <button className="px-4 py-2 text-sm border rounded-full">adminpanel</button>
         <button className="px-4 py-2 text-sm border rounded-full">charts</button>
         <button className="px-4 py-2 text-sm border rounded-full">work-resource</button>
 
