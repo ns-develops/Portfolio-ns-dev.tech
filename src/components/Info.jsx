@@ -86,11 +86,11 @@ const Info = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: "easeOut" }}
     >
-      <img
+    {/*  <img
         src={pictureMe}
         alt="Picture of me"
         className="w-full max-w-md h-auto mb-6 object-cover"
-      />
+      />*/}
 
       <h2 className="text-4xl font-bold mb-6 text-center">Om mig</h2>
 

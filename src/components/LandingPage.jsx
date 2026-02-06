@@ -2,7 +2,7 @@ import React from "react";
 import { SlArrowDown } from "react-icons/sl";
 
 function LandingPage() {
-  const lines = ["NS DEV", "We Create", "Signature"];
+  const lines = ["NS DEV", "Creative", "Portfolio"];
   const subtitles = [
     "Empowering startups and enterprise-level businesses",
     "Code meets solution",
