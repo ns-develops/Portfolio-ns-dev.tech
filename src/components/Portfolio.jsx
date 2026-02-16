@@ -1,12 +1,10 @@
 import { motion } from "framer-motion";
 import Fotboll from "../assets/football.png";
 import Ecommerce from "../assets/testphone.png";
-import Saas from "../assets/saas.jpg";
 
 const Portfolio = () => {
   const fyde = "";
   const vise = "";
-  const saasText = "";
 
   return (
     <div className="w-full bg-white text-black min-h-screen">
@@ -100,53 +98,6 @@ const Portfolio = () => {
             <button className="px-4 py-2 text-sm border rounded-full">e-commerce</button>
           </div>
         </div>
-
-       {/* PROJECT 3 */}
-<div className="flex flex-col w-full md:w-[48%]">
-  <div className="flex items-center gap-2 mb-4">
-    <span className="w-3 h-3 rounded-full bg-black"></span>
-    <span className="text-sm font-semibold">SaaS Platform</span>
-  </div>
-
-  <a
-    href="https://ns-develops.github.io/SaaS-system-Adminpanel/"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="block"
-  >
-    <motion.div
-      className="relative group rounded-xl h-64 md:h-[75vh] overflow-hidden flex items-center justify-center bg-gray-200 cursor-pointer"
-      whileHover={{ scale: 0.95, filter: "brightness(0.8)" }}
-      transition={{ type: "spring", stiffness: 200, damping: 18 }}
-    >
-      <img
-        src={Saas}
-        alt="SaaS Admin Panel"
-        className="w-8/12 md:w-6/12 rounded-xl shadow-lg"
-      />
-
-      <h1 className="absolute top-1/2 right-1/4 -translate-y-1/2 text-3xl md:text-6xl font-bold text-[#CDEA68] flex">
-        {saasText.split("").map((letter, i) => (
-          <span
-            key={i}
-            className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-            style={{ transitionDelay: `${i * 150}ms` }}
-          >
-            {letter}
-          </span>
-        ))}
-      </h1>
-    </motion.div>
-  </a>
-
-  <div className="mt-4 flex gap-2 flex-wrap">
-    <button className="px-4 py-2 text-sm border rounded-full">saas</button>
-        <button className="px-4 py-2 text-sm border rounded-full">charts</button>
-        <button className="px-4 py-2 text-sm border rounded-full">work-resource</button>
-
-  </div>
-</div>
-
 
       </div>
     </div>
