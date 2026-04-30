@@ -14,7 +14,6 @@ const Portfolio = () => {
         </h1>
       </div>
 
-      {/* PROJECTS */}
       <div className="px-6 md:px-20 mt-10 md:mt-20 flex flex-col md:flex-row flex-wrap gap-10">
 
         {/* PROJECT 1 */}

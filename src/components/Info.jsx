@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import pictureMe from "../assets/new.jpg"; // importerar bilden
 
 /* =========================
-   SNAKE 
+  SNAKE 
 ========================= */
 
 // const Snake = () => {
@@ -46,7 +46,7 @@ import pictureMe from "../assets/new.jpg"; // importerar bilden
 // };
 
 /* =========================
-   CARTOON 
+  CARTOON 
 ========================= */
 
 // const Cartoon = () => {
@@ -75,7 +75,7 @@ import pictureMe from "../assets/new.jpg"; // importerar bilden
 // };
 
 /* =========================
-   INFO – AKTIV
+  INFO – AKTIV
 ========================= */
 
 const Info = () => {
@@ -86,17 +86,33 @@ const Info = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: "easeOut" }}
     >
-    {/*  <img
+      {/*  <img
         src={pictureMe}
         alt="Picture of me"
         className="w-full max-w-md h-auto mb-6 object-cover"
       />*/}
 
-      <h2 className="text-4xl font-bold mb-6 text-center">Om mig</h2>
+      <motion.h2
+        className="text-4xl font-bold mb-6 text-center"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.6 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        Om mig
+      </motion.h2>
 
-      <p className="w-full max-w-[90%] md:max-w-[80%] lg:max-w-[70%] text-center text-[clamp(16px,2vw,22px)] leading-[clamp(24px,3vw,32px)] font-mono">
-Det började med min passion för programmering år 2020, vilket så småningom ledde till att jag tog en universitetsexamen som App- och webbutvecklare vid Göteborgs universitet. Med över fem års erfarenhet av webb- och native-apputveckling har jag arbetat med fullständiga applikationer med moderna tekniker som React, TypeScript och Node.js.
-Jag brinner för design, problemlösning och att skapa användarvänliga applikationer som löser verkliga behov. En stor del av min tid lägger jag på att lära mig nya tekniker, nyfiken på bidra till open source-projekt och utforska kreativa lösningar på komplexa problem. Det handlar om att förstå hur människor interagerar, hur färger, typografi och layout påverkar och tar form på skärmen.      </p>
+      <motion.p
+        className="w-full max-w-[90%] md:max-w-[80%] lg:max-w-[70%] text-center text-[clamp(16px,2vw,22px)] leading-[clamp(24px,3vw,32px)] font-mono"
+        initial={{ opacity: 0, y: 80 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{ duration: 1.1, ease: "easeOut" }}
+      >
+        Det började med min passion för programmering år 2020, vilket så småningom ledde till att jag tog en universitetsexamen som App- och webbutvecklare vid Göteborgs universitet. Med över fem års erfarenhet av webb- och native-apputveckling har jag arbetat med fullständiga applikationer med moderna tekniker som React, TypeScript och Node.js.
+
+        Jag brinner för design, problemlösning och att skapa användarvänliga applikationer som löser verkliga behov. En stor del av min tid lägger jag på att lära mig nya tekniker, nyfiken på bidra till open source-projekt och utforska kreativa lösningar på komplexa problem. Det handlar om att förstå hur människor interagerar, hur färger, typografi och layout påverkar och tar form på skärmen.
+      </motion.p>
     </motion.div>
   );
 };
