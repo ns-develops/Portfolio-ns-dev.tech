@@ -137,8 +137,7 @@ const Info = () => {
       {/* ===== TIMELINE / STATUS SEKTION ===== */}
       <motion.div
         ref={sectionRef}
-        className="mt-8 flex flex-row items-start justify-center gap-24 md:gap-40 text-center flex-wrap"
-        initial={{ opacity: 0, y: 40 }}
+className="mt-32 md:mt-40 flex flex-row items-start justify-center gap-24 md:gap-40 text-center flex-wrap"        initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.4 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
