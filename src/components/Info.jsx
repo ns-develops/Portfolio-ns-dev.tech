@@ -77,7 +77,6 @@ import pictureMe from "../assets/new.jpg"; // importerar bilden
 /* =========================
   INFO – AKTIV
 ========================= */
-
 const Info = () => {
   return (
     <motion.div
@@ -109,10 +108,27 @@ const Info = () => {
         viewport={{ once: true, amount: 0.4 }}
         transition={{ duration: 1.1, ease: "easeOut" }}
       >
-        Det började med min passion för programmering år 2020, vilket så småningom ledde till att jag tog en universitetsexamen som App- och webbutvecklare vid Göteborgs universitet. Med över fem års erfarenhet av webb- och native-apputveckling har jag arbetat med fullständiga applikationer med moderna tekniker som React, TypeScript och Node.js.
+        Det började med min passion för programmering år 2020, vilket så småningom ledde till att jag tog en universitetsexamen som App- och webbutvecklare. Jag har arbetat med fullständiga applikationer med moderna tekniker som React, TypeScript och Node.js.
 
-        Jag brinner för design, problemlösning och att skapa användarvänliga applikationer som löser verkliga behov. En stor del av min tid lägger jag på att lära mig nya tekniker, nyfiken på bidra till open source-projekt och utforska kreativa lösningar på komplexa problem. Det handlar om att förstå hur människor interagerar, hur färger, typografi och layout påverkar och tar form på skärmen.
+        Jag brinner för design, problemlösning och att skapa användarvänliga applikationer som löser verkliga behov. En stor del av min tid lägger jag på att lära mig nya tekniker, nyfiken på bidra till open source-projekt och utforska kreativa lösningar på komplexa problem.
       </motion.p>
+
+{/* ===== TIMELINE / STATUS SEKTION ===== */}
+<motion.div
+  className="mt-16 flex flex-row items-center justify-center gap-24 md:gap-40 text-center flex-wrap"
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, amount: 0.4 }}
+  transition={{ duration: 0.8, ease: "easeOut" }}
+>
+  <span className="text-sm lowercase">sense</span>
+
+  <span className="text-sm lowercase">applications</span>
+
+  <span className="text-sm lowercase">interviews</span>
+
+  <span className="text-sm lowercase">Yaay!</span>
+</motion.div>
     </motion.div>
   );
 };
