@@ -115,19 +115,35 @@ const Info = () => {
 
 {/* ===== TIMELINE / STATUS SEKTION ===== */}
 <motion.div
-  className="mt-16 flex flex-row items-center justify-center gap-24 md:gap-40 text-center flex-wrap"
+  className="mt-16 flex flex-row items-start justify-center gap-24 md:gap-40 text-center flex-wrap"
   initial={{ opacity: 0, y: 40 }}
   whileInView={{ opacity: 1, y: 0 }}
   viewport={{ once: true, amount: 0.4 }}
   transition={{ duration: 0.8, ease: "easeOut" }}
 >
-  <span className="text-sm lowercase">sense</span>
+  {/* sense */}
+  <div className="flex flex-col items-center leading-none">
+    <span className="text-sm lowercase">sense</span>
+    <span className="text-lg font-bold uppercase tracking-widest">2026</span>
+  </div>
 
-  <span className="text-sm lowercase">applications</span>
+  {/* applications */}
+  <div className="flex flex-col items-center leading-none">
+    <span className="text-sm lowercase">applications</span>
+    <span className="text-lg font-bold uppercase tracking-widest">3+</span>
+  </div>
 
-  <span className="text-sm lowercase">interviews</span>
+  {/* interviews */}
+  <div className="flex flex-col items-center leading-none">
+    <span className="text-sm lowercase">interviews</span>
+    <span className="text-lg font-bold uppercase tracking-widest">2+</span>
+  </div>
 
-  <span className="text-sm lowercase">Yaay!</span>
+  {/* job offer */}
+  <div className="flex flex-col items-center leading-none">
+    <span className="text-sm lowercase">the job offer</span>
+    <span className="text-lg font-bold uppercase tracking-widest">0</span>
+  </div>
 </motion.div>
     </motion.div>
   );
