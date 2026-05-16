@@ -124,25 +124,33 @@ const Info = () => {
   {/* sense */}
   <div className="flex flex-col items-center leading-none">
     <span className="text-sm lowercase">sense</span>
-    <span className="text-lg font-bold uppercase tracking-widest">2026</span>
+    <span className="text-3xl md:text-4xl font-bold uppercase tracking-widest">
+      2026
+    </span>
   </div>
 
   {/* applications */}
   <div className="flex flex-col items-center leading-none">
     <span className="text-sm lowercase">applications</span>
-    <span className="text-lg font-bold uppercase tracking-widest">3+</span>
+    <span className="text-3xl md:text-4xl font-bold uppercase tracking-widest">
+      3+
+    </span>
   </div>
 
   {/* interviews */}
   <div className="flex flex-col items-center leading-none">
     <span className="text-sm lowercase">interviews</span>
-    <span className="text-lg font-bold uppercase tracking-widest">2+</span>
+    <span className="text-3xl md:text-4xl font-bold uppercase tracking-widest">
+      2+
+    </span>
   </div>
 
   {/* job offer */}
   <div className="flex flex-col items-center leading-none">
     <span className="text-sm lowercase">the job offer</span>
-    <span className="text-lg font-bold uppercase tracking-widest">0</span>
+    <span className="text-3xl md:text-4xl font-bold uppercase tracking-widest">
+      0
+    </span>
   </div>
 </motion.div>
     </motion.div>
