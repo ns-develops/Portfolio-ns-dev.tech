@@ -107,37 +107,37 @@ const Info = () => {
 
   return (
     <motion.div
-      className="flex flex-col justify-center items-center w-full min-h-screen bg-white text-black px-6 md:px-20 lg:px-32 pt-10 pb-32"
+      className="flex flex-col items-center w-full min-h-screen bg-white text-black px-6 md:px-20 lg:px-32 pt-0 pb-24"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: "easeOut" }}
     >
       <motion.h2
-        className="text-4xl font-bold mb-6 text-center"
-        initial={{ opacity: 0, y: 40 }}
+        className="text-4xl font-bold mb-2 text-center"
+        initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.6 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        Om mig
+        
       </motion.h2>
 
       <motion.p
-        className="w-full max-w-[90%] md:max-w-[80%] lg:max-w-[70%] text-center text-[clamp(16px,2vw,22px)] leading-[clamp(24px,3vw,32px)] font-mono"
+        className="w-full max-w-[90%] md:max-w-[80%] lg:max-w-[70%] text-center text-sm md:text-base leading-relaxed tracking-wide mt-1"
         initial={{ opacity: 0, y: 80 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.4 }}
         transition={{ duration: 1.1, ease: "easeOut" }}
       >
-        Det började med min passion för programmering år 2020, vilket så småningom ledde till att jag tog en universitetsexamen som App- och webbutvecklare vid Göteborgs universitet. Med över fem års erfarenhet av webb- och native-apputveckling har jag arbetat med fullständiga applikationer med moderna tekniker som React, TypeScript och Node.js.
+        Det började med min passion för programmering år 2020, vilket så småningom ledde till att jag tog en universitetsexamen som app- och webbutvecklare. Jag har arbetat med fullständiga applikationer med moderna tekniker som Typescript och Node.js.
 
-        Jag brinner för design, problemlösning och att skapa användarvänliga applikationer som löser verkliga behov. En stor del av min tid lägger jag på att lära mig nya tekniker, nyfiken på bidra till open source-projekt och utforska kreativa lösningar på komplexa problem. Det handlar om att förstå hur människor interagerar, hur färger, typografi och layout påverkar och tar form på skärmen.
+        Jag brinner för design, problemlösning och att skapa användarvänliga applikationer som löser verkliga behov. En stor del av min tid lägger jag på att lära mig nya tekniker, nyfiken på bidra till open source-projekt och utforska kreativa lösningar på komplexa problem.
       </motion.p>
 
       {/* ===== TIMELINE / STATUS SEKTION ===== */}
       <motion.div
         ref={sectionRef}
-        className="mt-16 flex flex-row items-start justify-center gap-24 md:gap-40 text-center flex-wrap"
+        className="mt-8 flex flex-row items-start justify-center gap-24 md:gap-40 text-center flex-wrap"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.4 }}
@@ -146,7 +146,7 @@ const Info = () => {
         {/* sense */}
         <div className="flex flex-col items-center leading-none">
           <span className="text-sm lowercase">sense</span>
-          <span className="text-3xl md:text-4xl font-bold uppercase tracking-widest">
+          <span className="text-5xl md:text-7xl lg:text-8xl font-bold uppercase tracking-widest">
             2026
           </span>
         </div>
@@ -154,7 +154,7 @@ const Info = () => {
         {/* applications */}
         <div className="flex flex-col items-center leading-none">
           <span className="text-sm lowercase">applications</span>
-          <span className="text-3xl md:text-4xl font-bold uppercase tracking-widest">
+          <span className="text-5xl md:text-7xl lg:text-8xl font-bold uppercase tracking-widest">
             {applications}+
           </span>
         </div>
@@ -162,7 +162,7 @@ const Info = () => {
         {/* interviews */}
         <div className="flex flex-col items-center leading-none">
           <span className="text-sm lowercase">interviews</span>
-          <span className="text-3xl md:text-4xl font-bold uppercase tracking-widest">
+          <span className="text-5xl md:text-7xl lg:text-8xl font-bold uppercase tracking-widest">
             {interviews}+
           </span>
         </div>
@@ -170,7 +170,7 @@ const Info = () => {
         {/* job offer */}
         <div className="flex flex-col items-center leading-none">
           <span className="text-sm lowercase">yaay!</span>
-          <span className="text-3xl md:text-4xl font-bold uppercase tracking-widest">
+          <span className="text-5xl md:text-7xl lg:text-8xl font-bold uppercase tracking-widest">
             0
           </span>
         </div>
