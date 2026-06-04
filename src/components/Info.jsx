@@ -91,13 +91,13 @@ const Info = () => {
     let intv = 1;
 
     const interval = setInterval(() => {
-      app = app < 3 ? app + 1 : 3;
+      app = app < 7 ? app + 1 : 7; // 🔥 ändrad här
       intv = intv < 2 ? intv + 1 : 2;
 
       setApplications(app);
       setInterviews(intv);
 
-      if (app === 3 && intv === 2) {
+      if (app === 7 && intv === 2) { // 🔥 ändrad här
         clearInterval(interval);
       }
     }, 400);
@@ -137,7 +137,8 @@ const Info = () => {
       {/* ===== TIMELINE / STATUS SEKTION ===== */}
       <motion.div
         ref={sectionRef}
-className="mt-32 md:mt-40 flex flex-row items-start justify-center gap-24 md:gap-40 text-center flex-wrap"        initial={{ opacity: 0, y: 40 }}
+        className="mt-32 md:mt-40 flex flex-row items-start justify-center gap-24 md:gap-40 text-center flex-wrap"
+        initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.4 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
