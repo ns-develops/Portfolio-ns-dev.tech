@@ -168,6 +168,52 @@ const Info = () => {
         source-projekt och utforska kreativa lösningar på komplexa problem.
       </motion.p>
 
+      {/* ===== UTBILDNINGAR ===== */}
+
+      <motion.div
+        className="mt-10 text-center"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{
+          once: true,
+          amount: 0.4,
+        }}
+        transition={{
+          duration: 0.8,
+          ease: "easeOut",
+        }}
+      >
+        <span className="text-sm lowercase underline underline-offset-4">
+          utbildningar
+        </span>
+
+        <div className="mt-4">
+          <p className="text-base md:text-lg font-medium">
+      Kandidatexamen inom Industrial Engineering and Management
+          </p>
+
+          <p className="text-sm md:text-base mt-1">
+            Uppsala universitet
+          </p>
+        </div>
+      </motion.div>
+
+       <p className="text-base md:text-lg font-medium mt-6">
+    Mobilapputvecklare Yh
+  </p>
+
+  <p className="text-sm md:text-base mt-1">
+    Folkuniversitetet
+  </p>
+
+    <p className="text-base md:text-lg font-medium mt-6">
+    Web design
+  </p>
+
+  <p className="text-sm md:text-base mt-1">
+    Karlskoga Folkhögskola
+  </p>
+
       {/* ===== TIMELINE / STATUS SEKTION ===== */}
 
       <motion.div
