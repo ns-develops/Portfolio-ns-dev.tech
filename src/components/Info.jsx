@@ -207,7 +207,7 @@ const Info = () => {
   </p>
 
     <p className="text-base md:text-lg font-medium mt-6">
-    Web design
+    Webb utvecklare och webb design Yh
   </p>
 
   <p className="text-sm md:text-base mt-1">
