@@ -230,7 +230,7 @@ const Info = () => {
 
         <div className="flex flex-col items-center leading-none">
           <span className="text-sm lowercase">
-            yaay!
+            job offer
           </span>
 
           <span className="text-5xl md:text-7xl lg:text-8xl font-bold uppercase tracking-widest">
