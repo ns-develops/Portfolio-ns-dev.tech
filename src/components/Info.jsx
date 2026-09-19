@@ -1,81 +1,14 @@
 import React, { useRef, useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
-import pictureMe from "../assets/new.jpg"; // importerar bilden
-
-/* =========================
-  SNAKE 
-========================= */
-
-// const Snake = () => {
-//   const canvasRef = useRef(null);
-//   const gridSize = 20;
-//   const canvasSize = 400;
-
-//   const [snake, setSnake] = useState([
-//     { x: 8, y: 8 },
-//     { x: 7, y: 8 },
-//     { x: 6, y: 8 },
-//   ]);
-//   const [direction, setDirection] = useState({ x: 1, y: 0 });
-//   const [fruit, setFruit] = useState({ x: 12, y: 8 });
-//   const [gameOver, setGameOver] = useState(false);
-//   const [gameStarted, setGameStarted] = useState(false);
-
-//   const startGame = () => {
-//     setSnake([
-//       { x: 8, y: 8 },
-//       { x: 7, y: 8 },
-//       { x: 6, y: 8 },
-//     ]);
-//     setDirection({ x: 1, y: 0 });
-//     setFruit({ x: 12, y: 8 });
-//     setGameOver(false);
-//     setGameStarted(true);
-//   };
-
-//   useEffect(() => {
-//     ...
-//   }, []);
-
-//   return (
-//     <div>
-//       <canvas />
-//     </div>
-//   );
-// };
-
-/* =========================
-  CARTOON 
-========================= */
-
-// const Cartoon = () => {
-//   const canvasRef = useRef(null);
-//   const [imgSrc, setImgSrc] = useState(null);
-
-//   const handleUpload = (e) => {
-//     ...
-//   };
-
-//   useEffect(() => {
-//     ...
-//   }, [imgSrc]);
-
-//   const cartoonify = (canvas) => {
-//     ...
-//   };
-
-//   return (
-//     <div>
-//       <h2>AI CARTOON EDITOR</h2>
-//       <input type="file" />
-//       <canvas ref={canvasRef} />
-//     </div>
-//   );
-// };
-
-/* =========================
-  INFO – AKTIV
-========================= */
+import { DiJava } from "react-icons/di";
+import {
+  SiKotlin,
+  SiReact,
+  SiSwift,
+  SiNodedotjs,
+  SiMongodb,
+} from "react-icons/si";
+import { FaAws } from "react-icons/fa";
 
 const Info = () => {
   const sectionRef = useRef(null);
@@ -95,27 +28,54 @@ const Info = () => {
     let intv = 1;
 
     const interval = setInterval(() => {
-      // Applications: 1 → 7
-      if (app < 7) {
-        app += 1;
+      if (app < 13) {
+        app++;
+        setApplications(app);
       }
 
-      // Interviews: 1 → 3
       if (intv < 3) {
-        intv += 1;
+        intv++;
+        setInterviews(intv);
       }
 
-      setApplications(app);
-      setInterviews(intv);
-
-      // Stoppa när båda nått sitt max
-      if (app === 7 && intv === 3) {
+      if (app >= 13 && intv >= 3) {
         clearInterval(interval);
       }
-    }, 400);
+    }, 200);
 
     return () => clearInterval(interval);
   }, [isInView]);
+
+  const technologies = [
+    {
+      name: "Java",
+      icon: <DiJava className="text-[160px]" />,
+    },
+    {
+      name: "Kotlin",
+      icon: <SiKotlin className="text-[150px]" />,
+    },
+    {
+      name: "React",
+      icon: <SiReact className="text-[150px]" />,
+    },
+    {
+      name: "Swift",
+      icon: <SiSwift className="text-[150px]" />,
+    },
+    {
+      name: "Node.js",
+      icon: <SiNodedotjs className="text-[150px]" />,
+    },
+    {
+      name: "MongoDB",
+      icon: <SiMongodb className="text-[150px]" />,
+    },
+    {
+      name: "AWS",
+      icon: <FaAws className="text-[150px]" />,
+    },
+  ];
 
   return (
     <motion.div
@@ -189,7 +149,7 @@ const Info = () => {
 
         <div className="mt-4">
           <p className="text-base md:text-lg font-medium">
-      Kandidatexamen inom Industrial Engineering and Management
+            Kandidatexamen inom Industrial Engineering and Management
           </p>
 
           <p className="text-sm md:text-base mt-1">
@@ -198,16 +158,29 @@ const Info = () => {
         </div>
       </motion.div>
 
-       <p className="text-base md:text-lg font-medium mt-6">
-    Mobilapputvecklare Yh
-  </p>
+      <motion.div
+        className="text-center mt-6"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{
+          once: true,
+          amount: 0.4,
+        }}
+        transition={{
+          duration: 0.8,
+          ease: "easeOut",
+        }}
+      >
+        <p className="text-base md:text-lg font-medium">
+          Mobilapputvecklare Yh
+        </p>
 
-  <p className="text-sm md:text-base mt-1">
-    Folkuniversitetet
-  </p>
+        <p className="text-sm md:text-base mt-1">
+          Folkuniversitetet
+        </p>
+      </motion.div>
 
-
-      {/* ===== TIMELINE / STATUS SEKTION ===== */}
+      {/* ===== COUNTERS ===== */}
 
       <motion.div
         ref={sectionRef}
@@ -229,7 +202,7 @@ const Info = () => {
           ease: "easeOut",
         }}
       >
-        {/* ===== SENSE ===== */}
+        {/* Sense */}
 
         <div className="flex flex-col items-center leading-none">
           <span className="text-sm lowercase">
@@ -241,7 +214,7 @@ const Info = () => {
           </span>
         </div>
 
-        {/* ===== APPLICATIONS ===== */}
+        {/* Applications */}
 
         <div className="flex flex-col items-center leading-none">
           <span className="text-sm lowercase">
@@ -253,7 +226,7 @@ const Info = () => {
           </span>
         </div>
 
-        {/* ===== INTERVIEWS ===== */}
+        {/* Interviews */}
 
         <div className="flex flex-col items-center leading-none">
           <span className="text-sm lowercase">
@@ -265,7 +238,7 @@ const Info = () => {
           </span>
         </div>
 
-        {/* ===== JOB OFFER ===== */}
+        {/* Job Offer */}
 
         <div className="flex flex-col items-center leading-none">
           <span className="text-sm lowercase">
@@ -275,6 +248,72 @@ const Info = () => {
           <span className="text-5xl md:text-7xl lg:text-8xl font-bold uppercase tracking-widest">
             0
           </span>
+        </div>
+      </motion.div>
+
+      {/* ===== TECH STACK ===== */}
+
+      <motion.div
+        className="mt-24 md:mt-32 flex flex-col items-center gap-8 md:gap-10"
+        initial={{
+          opacity: 0,
+          y: 30,
+        }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+        }}
+        viewport={{
+          once: true,
+          amount: 0.4,
+        }}
+        transition={{
+          duration: 0.8,
+          ease: "easeOut",
+        }}
+      >
+        {/* ===== FÖRSTA RADEN – 4 IKONER ===== */}
+
+        <div className="flex items-center justify-center gap-[150px]">
+          {technologies.slice(0, 4).map((technology) => (
+            <motion.div
+              key={technology.name}
+              className="flex items-center justify-center text-gray-300 cursor-default"
+              title={technology.name}
+              whileHover={{
+                y: -6,
+                scale: 1.08,
+                color: "#9ca3af",
+              }}
+              transition={{
+                duration: 0.2,
+              }}
+            >
+              {technology.icon}
+            </motion.div>
+          ))}
+        </div>
+
+        {/* ===== ANDRA RADEN – 3 IKONER ===== */}
+
+        <div className="flex items-center justify-center gap-[150px]">
+          {technologies.slice(4, 7).map((technology) => (
+            <motion.div
+              key={technology.name}
+              className="flex items-center justify-center text-gray-300 cursor-default"
+              title={technology.name}
+              whileHover={{
+                y: -6,
+                scale: 1.08,
+                color: "#9ca3af",
+              }}
+              transition={{
+                duration: 0.2,
+              }}
+            >
+              {technology.icon}
+            </motion.div>
+          ))}
         </div>
       </motion.div>
     </motion.div>
