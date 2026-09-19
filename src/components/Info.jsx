@@ -206,13 +206,6 @@ const Info = () => {
     Folkuniversitetet
   </p>
 
-    <p className="text-base md:text-lg font-medium mt-6">
-    Webb utvecklare och webb design Yh
-  </p>
-
-  <p className="text-sm md:text-base mt-1">
-    Karlskoga Folkhögskola
-  </p>
 
       {/* ===== TIMELINE / STATUS SEKTION ===== */}
 
