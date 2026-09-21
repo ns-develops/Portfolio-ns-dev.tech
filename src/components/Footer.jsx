@@ -55,22 +55,32 @@ const Footer = () => {
         </h1>
 
         <div className="dets flex flex-col gap-2 text-sm md:text-base">
-  
+
           <a
-  href="https://www.linkedin.com/in/natalie-samaan-5a0588353/"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="text-black hover:text-gray-700"
->
-  Linkedin
-</a>
-        
+            href="https://www.linkedin.com/in/natalie-samaan-5a0588353/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-black hover:text-gray-700"
+          >
+            Linkedin
+          </a>
+
           <a
-  href="mailto:natalie.samaan@live.se"
-  className="text-black hover:text-gray-700"
->
-  E-mail
-</a>
+            href="https://github.com/ns-develops"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-black hover:text-gray-700"
+          >
+            Github
+          </a>
+
+          <a
+            href="mailto:natalie.samaan@live.se"
+            className="text-black hover:text-gray-700"
+          >
+            E-mail
+          </a>
+
         </div>
       </div>
 
