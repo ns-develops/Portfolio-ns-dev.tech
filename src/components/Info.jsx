@@ -7,6 +7,7 @@ import {
   SiSwift,
   SiNodedotjs,
   SiMongodb,
+  SiExpress,
 } from "react-icons/si";
 import { FaAws } from "react-icons/fa";
 
@@ -75,6 +76,10 @@ const Info = () => {
       name: "AWS",
       icon: <FaAws className="text-[150px]" />,
     },
+    {
+      name: "Express",
+      icon: <SiExpress className="text-[150px]" />,
+    },
   ];
 
   return (
@@ -101,8 +106,7 @@ const Info = () => {
           duration: 0.8,
           ease: "easeOut",
         }}
-      >
-      </motion.h2>
+      ></motion.h2>
 
       <motion.p
         className="w-full max-w-[90%] md:max-w-[80%] lg:max-w-[70%] text-center text-sm md:text-base leading-relaxed tracking-wide mt-1"
@@ -172,7 +176,7 @@ const Info = () => {
         }}
       >
         <p className="text-base md:text-lg font-medium">
-          Mobilapputvecklare Yh
+          Softare Engineering specialized on applikations Yh
         </p>
 
         <p className="text-sm md:text-base mt-1">
@@ -294,10 +298,10 @@ const Info = () => {
           ))}
         </div>
 
-        {/* ===== ANDRA RADEN – 3 IKONER ===== */}
+        {/* ===== ANDRA RADEN – 4 IKONER ===== */}
 
         <div className="flex items-center justify-center gap-[150px]">
-          {technologies.slice(4, 7).map((technology) => (
+          {technologies.slice(4, 8).map((technology) => (
             <motion.div
               key={technology.name}
               className="flex items-center justify-center text-gray-300 cursor-default"
@@ -321,3 +325,4 @@ const Info = () => {
 };
 
 export default Info;
+
