@@ -1,3 +1,4 @@
+
 import React, { useRef, useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import { DiJava } from "react-icons/di";
@@ -29,17 +30,17 @@ const Info = () => {
     let intv = 1;
 
     const interval = setInterval(() => {
-      if (app < 13) {
+      if (app < 26) {
         app++;
         setApplications(app);
       }
 
-      if (intv < 3) {
+      if (intv < 4) {
         intv++;
         setInterviews(intv);
       }
 
-      if (app >= 13 && intv >= 3) {
+      if (app >= 26 && intv >= 4) {
         clearInterval(interval);
       }
     }, 200);
@@ -176,7 +177,7 @@ const Info = () => {
         }}
       >
         <p className="text-base md:text-lg font-medium">
-          Softare Engineering specialized on applikations Yh
+          Software Engineering specialized on applikations Yh
         </p>
 
         <p className="text-sm md:text-base mt-1">
@@ -325,4 +326,3 @@ const Info = () => {
 };
 
 export default Info;
-
