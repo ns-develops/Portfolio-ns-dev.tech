@@ -1,5 +1,7 @@
+
 import { motion } from "framer-motion";
 import Fotboll from "../assets/football.png";
+import Ikon from "../assets/ikon.jpg";
 
 const Portfolio = () => {
   const fyde = "";
@@ -14,7 +16,7 @@ const Portfolio = () => {
 
       <div className="px-6 md:px-20 mt-10 md:mt-20 flex flex-col md:flex-row flex-wrap gap-10">
 
-        {/* PROJECT 1 */}
+        {/* PROJECT 1 - SPORTLY */}
         <div className="flex flex-col w-full md:w-[48%]">
           <div className="flex items-center gap-2 mb-4">
             <span className="w-3 h-3 rounded-full bg-black"></span>
@@ -64,9 +66,52 @@ const Portfolio = () => {
             <button className="px-4 py-2 text-sm border rounded-full">
               mern
             </button>
-
             <button className="px-4 py-2 text-sm border rounded-full">
               jwt
+            </button>
+          </div>
+        </div>
+
+        {/* PROJECT 2 - INDIEHUB */}
+        <div className="flex flex-col w-full md:w-[48%]">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="w-3 h-3 rounded-full bg-black"></span>
+            <span className="text-sm font-semibold">IndieHub</span>
+          </div>
+
+          <a
+            href="https://apps.apple.com/se/app/indiehub/id6830210159"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <motion.div
+              className="relative group rounded-xl h-64 md:h-[75vh] overflow-hidden flex items-center justify-center bg-gray-200"
+              whileHover={{
+                scale: 0.95,
+                filter: "brightness(0.8)",
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 200,
+                damping: 18,
+              }}
+            >
+              <div className="w-8/12 md:w-6/12 aspect-square rounded-3xl overflow-hidden shadow-lg">
+                <img
+                  src={Ikon}
+                  alt="IndieHub"
+                  className="w-full h-full object-cover object-center scale-125"
+                />
+              </div>
+            </motion.div>
+          </a>
+
+          <div className="mt-4 flex gap-2 flex-wrap">
+            <button className="px-4 py-2 text-sm border rounded-full">
+              iOS
+            </button>
+            <button className="px-4 py-2 text-sm border rounded-full">
+              App Store
             </button>
           </div>
         </div>

@@ -35,12 +35,12 @@ const Info = () => {
         setApplications(app);
       }
 
-      if (intv < 4) {
+      if (intv < 5) {
         intv++;
         setInterviews(intv);
       }
 
-      if (app >= 26 && intv >= 4) {
+      if (app >= 26 && intv >= 5) {
         clearInterval(interval);
       }
     }, 200);
@@ -177,11 +177,11 @@ const Info = () => {
         }}
       >
         <p className="text-base md:text-lg font-medium">
-          Software Engineering specialized on applikations Yh
+          App and web developer
         </p>
 
         <p className="text-sm md:text-base mt-1">
-          Folkuniversitetet
+          Folkuniversitetet via Göteborgs Universitet
         </p>
       </motion.div>
 
