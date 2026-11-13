@@ -1,6 +1,6 @@
 
 import { motion } from "framer-motion";
-import Fotboll from "../assets/football.png";
+import Fotboll from "../assets/ikon2.png";
 import Ikon from "../assets/ikon.jpg";
 
 const Portfolio = () => {
