@@ -43,7 +43,7 @@ const Portfolio = () => {
               <img
                 src={Fotboll}
                 alt="Sportly"
-                className="w-[85%] sm:w-[75%] md:w-[60%] max-h-[220px] sm:max-h-[300px] md:max-h-none object-contain rounded-xl shadow-lg"
+                className="w-[70%] sm:w-[75%] md:w-[60%] max-h-[180px] sm:max-h-[300px] md:max-h-none object-contain rounded-xl shadow-lg"
               />
 
               <h1 className="absolute top-1/2 right-1/4 -translate-y-1/2 text-3xl md:text-6xl font-bold text-[#CDEA68] flex">
@@ -96,7 +96,7 @@ const Portfolio = () => {
                 damping: 18,
               }}
             >
-              <div className="w-[85%] sm:w-8/12 md:w-6/12 aspect-square rounded-3xl overflow-hidden shadow-lg">
+              <div className="w-[70%] sm:w-8/12 md:w-6/12 aspect-square rounded-3xl overflow-hidden shadow-lg">
                 <img
                   src={Ikon}
                   alt="IndieHub"
