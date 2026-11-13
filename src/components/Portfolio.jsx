@@ -29,7 +29,7 @@ const Portfolio = () => {
             rel="noopener noreferrer"
           >
             <motion.div
-              className="relative group rounded-xl h-64 md:h-[75vh] overflow-hidden flex items-center justify-center bg-gray-200"
+              className="relative group rounded-xl h-[280px] sm:h-[350px] md:h-[75vh] min-h-[350px] overflow-hidden flex items-center justify-center bg-gray-200"
               whileHover={{
                 scale: 0.95,
                 filter: "brightness(0.8)",
@@ -43,7 +43,7 @@ const Portfolio = () => {
               <img
                 src={Fotboll}
                 alt="Sportly"
-                className="w-8/12 md:w-6/12 rounded-xl shadow-lg"
+                className="w-[85%] sm:w-[75%] md:w-[60%] max-h-[220px] sm:max-h-[300px] md:max-h-none object-contain rounded-xl shadow-lg"
               />
 
               <h1 className="absolute top-1/2 right-1/4 -translate-y-1/2 text-3xl md:text-6xl font-bold text-[#CDEA68] flex">
@@ -85,7 +85,7 @@ const Portfolio = () => {
             rel="noopener noreferrer"
           >
             <motion.div
-              className="relative group rounded-xl h-64 md:h-[75vh] overflow-hidden flex items-center justify-center bg-gray-200"
+              className="relative group rounded-xl h-[280px] sm:h-[350px] md:h-[75vh] min-h-[350px] overflow-hidden flex items-center justify-center bg-gray-200"
               whileHover={{
                 scale: 0.95,
                 filter: "brightness(0.8)",
@@ -96,7 +96,7 @@ const Portfolio = () => {
                 damping: 18,
               }}
             >
-              <div className="w-8/12 md:w-6/12 aspect-square rounded-3xl overflow-hidden shadow-lg">
+              <div className="w-[85%] sm:w-8/12 md:w-6/12 aspect-square rounded-3xl overflow-hidden shadow-lg">
                 <img
                   src={Ikon}
                   alt="IndieHub"
