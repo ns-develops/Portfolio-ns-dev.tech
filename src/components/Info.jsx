@@ -1,4 +1,3 @@
-
 import React, { useRef, useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import { DiJava } from "react-icons/di";
@@ -30,7 +29,7 @@ const Info = () => {
     let intv = 1;
 
     const interval = setInterval(() => {
-      if (app < 26) {
+      if (app < 43) {
         app++;
         setApplications(app);
       }
@@ -40,7 +39,7 @@ const Info = () => {
         setInterviews(intv);
       }
 
-      if (app >= 26 && intv >= 5) {
+      if (app >= 43 && intv >= 5) {
         clearInterval(interval);
       }
     }, 200);
