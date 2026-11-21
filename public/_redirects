@@ -1,0 +1,2 @@
+/aiassistant    https://ai-agent-app-sable.vercel.app/aiassistant         200!
+/aiassistant/*  https://ai-agent-app-sable.vercel.app/aiassistant/:splat  200!
