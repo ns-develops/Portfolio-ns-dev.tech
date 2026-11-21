@@ -1,5 +1,6 @@
-import React, { useRef, useState, useEffect } from "react";
-import { motion, useInView } from "framer-motion";
+
+import React from "react";
+import { motion } from "framer-motion";
 import { DiJava } from "react-icons/di";
 import {
   SiKotlin,
@@ -12,41 +13,6 @@ import {
 import { FaAws } from "react-icons/fa";
 
 const Info = () => {
-  const sectionRef = useRef(null);
-
-  const isInView = useInView(sectionRef, {
-    once: true,
-    margin: "-100px",
-  });
-
-  const [applications, setApplications] = useState(1);
-  const [interviews, setInterviews] = useState(1);
-
-  useEffect(() => {
-    if (!isInView) return;
-
-    let app = 1;
-    let intv = 1;
-
-    const interval = setInterval(() => {
-      if (app < 43) {
-        app++;
-        setApplications(app);
-      }
-
-      if (intv < 5) {
-        intv++;
-        setInterviews(intv);
-      }
-
-      if (app >= 43 && intv >= 5) {
-        clearInterval(interval);
-      }
-    }, 200);
-
-    return () => clearInterval(interval);
-  }, [isInView]);
-
   const technologies = [
     {
       name: "Java",
@@ -121,15 +87,40 @@ const Info = () => {
           ease: "easeOut",
         }}
       >
-        Det började med min passion för programmering år 2020, vilket
-        så småningom ledde till att jag tog en universitetsexamen som app-
-        och webbutvecklare. Jag har arbetat med fullständiga applikationer
-        med moderna tekniker som Typescript och Node.js.
+        <span className="block mb-4">
+          Min resa inom programmering började 2020 genom egna projekt och ett
+          växande intresse för teknik, design och problemlösning. Det ledde
+          så småningom till en utbildning inom app- och webbutveckling, där jag
+          fått möjlighet att utveckla min kompetens inom både frontend, backend
+          och mobilutveckling.
+        </span>
 
-        Jag brinner för design, problemlösning och att skapa användarvänliga
-        applikationer som löser verkliga behov. En stor del av min tid lägger
-        jag på att lära mig nya tekniker, nyfiken på bidra till open
-        source-projekt och utforska kreativa lösningar på komplexa problem.
+        <span className="block mb-4">
+          Jag har erfarenhet av att utveckla fullstackapplikationer med tekniker
+          som TypeScript, JavaScript, React, Node.js, Express och PostgreSQL.
+          Jag har även arbetat med React Native och nativeutveckling för iOS
+          och Android med Swift, Kotlin och Java. Genom mina projekt har jag
+          fått erfarenhet av allt från API-integrationer, databashantering och
+          autentisering till pushnotiser, molntjänster och driftsättning.
+        </span>
+
+        <span className="block mb-4">
+          Jag har också ett stort intresse för AI och hur ny teknik kan användas
+          för att skapa smartare digitala lösningar. Jag experimenterar med
+          LLM-integrationer, API:er och agentisk programmering, bland annat med
+          Claude Code och OpenAI. Jag tycker det är spännande att kombinera
+          traditionell mjukvaruutveckling med nya möjligheter inom AI.
+        </span>
+
+        <span className="block">
+          Jag brinner för design, problemlösning och att skapa användarvänliga
+          applikationer som löser verkliga behov. En stor del av min tid lägger
+          jag på att lära mig nya tekniker, bidra till open source-projekt och
+          utforska kreativa lösningar på komplexa problem. Jag trivs med att
+          arbeta både självständigt och tillsammans med andra, och motiveras
+          av att få vara delaktig i hela processen – från idé till färdig
+          produkt.
+        </span>
       </motion.p>
 
       {/* ===== UTBILDNINGAR ===== */}
@@ -184,76 +175,7 @@ const Info = () => {
         </p>
       </motion.div>
 
-      {/* ===== COUNTERS ===== */}
-
-      <motion.div
-        ref={sectionRef}
-        className="mt-32 md:mt-40 flex flex-row items-start justify-center gap-24 md:gap-40 text-center flex-wrap"
-        initial={{
-          opacity: 0,
-          y: 40,
-        }}
-        whileInView={{
-          opacity: 1,
-          y: 0,
-        }}
-        viewport={{
-          once: true,
-          amount: 0.4,
-        }}
-        transition={{
-          duration: 0.8,
-          ease: "easeOut",
-        }}
-      >
-        {/* Sense */}
-
-        <div className="flex flex-col items-center leading-none">
-          <span className="text-sm lowercase">
-            sense
-          </span>
-
-          <span className="text-5xl md:text-7xl lg:text-8xl font-bold uppercase tracking-widest">
-            2026
-          </span>
-        </div>
-
-        {/* Applications */}
-
-        <div className="flex flex-col items-center leading-none">
-          <span className="text-sm lowercase">
-            applications
-          </span>
-
-          <span className="text-5xl md:text-7xl lg:text-8xl font-bold uppercase tracking-widest">
-            {applications}+
-          </span>
-        </div>
-
-        {/* Interviews */}
-
-        <div className="flex flex-col items-center leading-none">
-          <span className="text-sm lowercase">
-            interviews
-          </span>
-
-          <span className="text-5xl md:text-7xl lg:text-8xl font-bold uppercase tracking-widest">
-            {interviews}+
-          </span>
-        </div>
-
-        {/* Job Offer */}
-
-        <div className="flex flex-col items-center leading-none">
-          <span className="text-sm lowercase">
-            job offer
-          </span>
-
-          <span className="text-5xl md:text-7xl lg:text-8xl font-bold uppercase tracking-widest">
-            0
-          </span>
-        </div>
-      </motion.div>
+      {/* ===== COUNTERS BORTTAGNA ===== */}
 
       {/* ===== TECH STACK ===== */}
 
